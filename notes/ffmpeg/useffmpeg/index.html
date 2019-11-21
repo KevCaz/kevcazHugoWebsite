@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <head>
+
+    <br><br>
+    <title>Use FFmpeg!</title>
+
+    
+    <style>
+
+    html body {
+        font-family: ZgotmplZ, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #2196F3;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="../../../css/main.css">
+
+
+<link rel="stylesheet" href="../../../css/perso.css">
+
+<link rel="stylesheet" href="../../../css/creativecommons.css">
+
+<link rel="stylesheet" href="../../../css/flag-icon.css">
+
+
+<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../../css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../../../css/academicons.min.css" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../../js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../../../js/jquery.tocify.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false,
+    }
+    });
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+        <ul class="nav navbar-nav mr-auto">
+          
+          
+          <li><a href="../../../publications/">Publications</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../talks/">Talks&amp;Posters</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../teaching/">Teaching</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../software/">Software</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../econotes/">EcoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../notes/">SilicoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../perso/">Perso</a></li>
+          
+
+
+          
+        </ul>
+        
+
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="navbar-icon"> <a href="../../../"><i class="fa fa-home"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
+          
+        </ul>
+        
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <br>
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <div class="hidden-sm hidden-xs">
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+
+      
+
+<div class="article-meta">
+  <h1><span class="title">Use FFmpeg!</span></h1>
+  <h3><span class="subtitle"></span></h3>
+  
+  <h3 class="date" style="font-size: 1.25em;">September 13, 2018</h2>
+
+  
+  
+    <p class="tags">
+      <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
+      
+        <a href="../../../tags/ffmpeg"> <kbd class="item-tag">ffmpeg</kbd></a>
+      
+        <a href="../../../tags/video"> <kbd class="item-tag">video</kbd></a>
+      
+        <a href="../../../tags/audio"> <kbd class="item-tag">audio</kbd></a>
+      
+        <a href="../../../tags/format"> <kbd class="item-tag">format</kbd></a>
+      
+        <a href="../../../tags/freeware"> <kbd class="item-tag">freeware</kbd></a>
+      
+    </p>
+  
+  
+
+  
+  
+  
+
+  <br>
+
+</div>
+
+<p>As mentioned on its website, <a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a> is:</p>
+
+<blockquote>
+<p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
+</blockquote>
+
+<p>FFmep is a powerful freeware, as mentioned on the <a href="https://en.wikipedia.org/wiki/FFmpeg" target="_blank">Wikipedia page</a></p>
+
+<blockquote>
+<p>FFmpeg includes libavcodec, an audio/video codec library used by many commercial and free software products, libavformat (Lavf),[6] an audio/video container mux and demux library, and the core ffmpeg command line program for transcoding multimedia files.</p>
+</blockquote>
+
+<p><a href="https://en.wikipedia.org/wiki/VLC_media_player" target="_blank">libavcodec is actually used in VLC</a>
+a popular multimedia you may be familiar with. Personally I value FFmpeg for its
+CLI that allows many audio/video format manipulation and conversion. For instance,
+in order to get a sample of 3.4 seconds from a video (let&rsquo;s say in <code>.mp4</code>)
+starting at <em>56min42sec500ms</em> , do this:</p>
+
+<pre><code class="language-sh">ffmpeg -ss 00:56:42.500 -i yourvideo.mp4 -t 3.4 -c copy out.mp4         
+</code></pre>
+
+<p>Also, to convert audio file in batch formats in batch:</p>
+
+<pre><code class="language-sh"># wma to mp3
+for i in *.wma; do ffmpeg -i &quot;$i&quot; -b 320kb &quot;${i%wma}mp3&quot;; done
+
+# flac to mp3
+for i in *.flac; do ffmpeg -i &quot;$i&quot;  -b 320kb &quot;${i%flac}mp3&quot;; done
+
+# flac en alac
+for i in *.flac; do ffmpeg -i &quot;$i&quot; -acodec alac  &quot;`basename &quot;$i&quot; .flac`.m4a&quot;; done;
+</code></pre>
+
+<p>The CLI is fairly simple and if you know a bit a <code>bash</code> then I,m sure many ideas
+pop up in your mind and make you realize how powerful this could be.</p>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <br><br>
+
+  <footer>
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="hidden-sm hidden-xs">
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+
+  <hr>
+
+  <div class="col-sm-10" style="text-align: center">
+
+    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
+    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
+
+    <i class="fa fa-code" aria-hidden="true"></i> available on
+    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
+
+    <br>
+    All content is licensed under
+    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
+       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
+    </a>
+    unless otherwise specified.
+
+  </div>
+
+
+  <div class="col-sm-2">
+    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
+    <br><br>
+  </div>
+
+
+<div>
+
+        
+
+      </div>
+
+    </div>
+
+  <br>
+  </footer>
+
+  </body>
+
+</html>
+

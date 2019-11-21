@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <head>
+
+    <br><br>
+    <title>Software</title>
+
+    
+    <style>
+
+    html body {
+        font-family: ZgotmplZ, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #2196F3;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="../css/main.css">
+
+
+<link rel="stylesheet" href="../css/perso.css">
+
+<link rel="stylesheet" href="../css/creativecommons.css">
+
+<link rel="stylesheet" href="../css/flag-icon.css">
+
+
+<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../css/academicons.min.css" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../js/jquery.tocify.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false,
+    }
+    });
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+        <ul class="nav navbar-nav mr-auto">
+          
+          
+          <li><a href="../publications/">Publications</a></li>
+          
+
+
+          
+          
+          <li><a href="../talks/">Talks&amp;Posters</a></li>
+          
+
+
+          
+          
+          <li><a href="../teaching/">Teaching</a></li>
+          
+
+
+          
+          
+          <li><a href="../software/">Software</a></li>
+          
+
+
+          
+          
+          <li><a href="../econotes/">EcoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../notes/">SilicoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../perso/">Perso</a></li>
+          
+
+
+          
+        </ul>
+        
+
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="navbar-icon"> <a href="../"><i class="fa fa-home"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
+          
+        </ul>
+        
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <br>
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <div class="hidden-sm hidden-xs">
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+
+      
+
+  <h1>
+    <i class="fa fa-code" aria-hidden="true"></i> Software
+  </h1>
+
+  <hr>
+
+  <p>Here are listed the software I developed (and for some of them still am developing) or significantly contributed to.</p>
+
+<p><br></p>
+
+
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/TheoreticalEcosystemEcology/alien" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> alien </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          
+          <hr>
+          <p> Methods to predict ecological interactions. </p>
+          
+            
+              <a href="https://travis-ci.org/TheoreticalEcosystemEcology/alien">
+              <img alt = "Build Status"  src="https://travis-ci.org/TheoreticalEcosystemEcology/alien.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/TheoreticalEcosystemEcology/alien/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/al10lmlky7se4wa6/branch/master?svg=true"></img></a>
+            
+            
+            
+                <a href="https://www.repostatus.org/#wip"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/wip.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/KevCaz/burningHouse" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> burningHouse </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; Reproducibility </h4>
+          
+          <hr>
+          <p> Data, analyses and figures found in DOI: 10.3389fevo.2017.00175 </p>
+          
+            
+              <a href="https://travis-ci.org/KevCaz/burningHouse">
+              <img alt = "Build Status"  src="https://travis-ci.org/KevCaz/burningHouse.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/KevCaz/burningHouse/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/qh4ntjow6tcho9oh?/branch/master?svg=true"></img></a>
+            
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/KevCaz/diskers" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> diskers </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          
+          <hr>
+          <p> Collection of seed dispersal kernels written in Rcpp. </p>
+          
+            
+              <a href="https://travis-ci.org/KevCaz/diskers">
+              <img alt = "Build Status"  src="https://travis-ci.org/KevCaz/diskers.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/KevCaz/diskers/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/h1r36ififnvvk04q/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/KevCaz/diskers"><img alt = "codecov"  src="https://codecov.io/gh/KevCaz/diskers/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/KevCaz/ecoocc" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> ecoocc </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          
+          <hr>
+          <p> Occurrence and cooccurrence analysis in ecology </p>
+          
+            
+              <a href="https://travis-ci.org/KevCaz/ecoocc">
+              <img alt = "Build Status"  src="https://travis-ci.org/KevCaz/ecoocc.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/KevCaz/ecoocc/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/qeywntin8yma0jb0/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/KevCaz/ecoocc"><img alt = "codecov"  src="https://codecov.io/gh/KevCaz/ecoocc/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#concept"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/concept.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/inSileco/graphicsutils" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> graphicsutils </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          <h3 style="font-weight:bold;display:inline;"> &nbsp;&nbsp; <a href="http://insileco.github.io/graphicsutils/"><i class="fa fa-globe" aria-hidden="true"></i></a></h3>
+          <hr>
+          <p> Collection of graphics functions. </p>
+          
+            
+              <a href="https://travis-ci.org/inSileco/graphicsutils">
+              <img alt = "Build Status"  src="https://travis-ci.org/inSileco/graphicsutils.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/inSileco/graphicsutils/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/inSileco/graphicsutils"><img alt = "codecov"  src="https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/McCannLab/HomogenFishOntario" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> HomogenFishOntario </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; Reproducibility </h4>
+          <h3 style="font-weight:bold;display:inline;"> &nbsp;&nbsp; <a href="http://mccannlab.ca/HomogenFishOntario/"><i class="fa fa-globe" aria-hidden="true"></i></a></h3>
+          <hr>
+          <p> Data, analyses and figures found in DOI: 10.1111/gcb.14829 </p>
+          
+            
+              <a href="https://travis-ci.org/McCannLab/HomogenFishOntario">
+              <img alt = "Build Status"  src="https://travis-ci.org/McCannLab/HomogenFishOntario.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/McCannLab/HomogenFishOntario/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/iw2lkapvla1flr8v/branch/master?svg=true"></img></a>
+            
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/inSileco/inSilecoMisc" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> inSilecoMisc </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          <h3 style="font-weight:bold;display:inline;"> &nbsp;&nbsp; <a href="http://insileco.github.io/inSilecoMisc/"><i class="fa fa-globe" aria-hidden="true"></i></a></h3>
+          <hr>
+          <p> Miscelleneous R functions. </p>
+          
+            
+              <a href="https://travis-ci.org/inSileco/inSilecoMisc">
+              <img alt = "Build Status"  src="https://travis-ci.org/inSileco/inSilecoMisc.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/inSileco/inSilecoMisc/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/inSileco/inSilecoMisc"><img alt = "codecov"  src="https://codecov.io/gh/inSileco/inSilecoMisc/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/KevCaz/monitoringOutcomes" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> monitoringOutcomes </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; Reproducibility </h4>
+          
+          <hr>
+          <p> Data, analyses and figures included in DOI: 10.1111/cobi.13257 </p>
+          
+            
+              <a href="https://travis-ci.org/KevCaz/monitoringOutcomes">
+              <img alt = "Build Status"  src="https://travis-ci.org/KevCaz/monitoringOutcomes.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/KevCaz/monitoringOutcomes/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/2hkpklm56c8q7gmn/branch/master?svg=true"></img></a>
+            
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/ropensci/rcites" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> rcites </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          <h3 style="font-weight:bold;display:inline;"> &nbsp;&nbsp; <a href="https://ropensci.github.io/rcites/"><i class="fa fa-globe" aria-hidden="true"></i></a></h3>
+          <hr>
+          <p> Access information from the Speciesplus database </p>
+          
+            
+              <a href="https://travis-ci.org/ropensci/rcites">
+              <img alt = "Build Status"  src="https://travis-ci.org/ropensci/rcites.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/ropensci/rcites/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/kgimo4v7rvtpkp5e/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/ropensci/rcites"><img alt = "codecov"  src="https://codecov.io/gh/ropensci/rcites/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+                <a href="https://github.com/ropensci/onboarding/issues/244"><img alt = "ROpenSci status" src="https://badges.ropensci.org/244_status.svg"></img></a>
+            
+            
+                <a href="https://cran.r-project.org/package=rcites"><img alt = "CRAN status" src="https://www.r-pkg.org/badges/version/rcites"></img></a>
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-12 text-left">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-12">
+           <a href="https://github.com/ropensci/rmangal" style="display:inline;"><i class="fa fa-2x fa-github" aria-hidden="true"></i>&nbsp;&nbsp;</a><h3 style="font-weight:bold;display:inline;"> rmangal </h3>
+          <h4 style="font-weight:bold;display:inline;"> &nbsp;-&nbsp; R package </h4>
+          <h3 style="font-weight:bold;display:inline;"> &nbsp;&nbsp; <a href="https://ropensci.github.io/rmangal/"><i class="fa fa-globe" aria-hidden="true"></i></a></h3>
+          <hr>
+          <p> Retrieve data from MANGAL. </p>
+          
+            
+              <a href="https://travis-ci.org/ropensci/rmangal">
+              <img alt = "Build Status"  src="https://travis-ci.org/ropensci/rmangal.svg?branch=master"></img></a>
+            
+            
+              <a href="https://ci.appveyor.com/project/ropensci/rmangal/branch/master"><img alt = "Build Status"  src="https://ci.appveyor.com/api/projects/status/mibs2ni969xiqgrd/branch/master?svg=true"></img></a>
+            
+            
+              <a href="https://codecov.io/gh/ropensci/rmangal"><img alt = "codecov"  src="https://codecov.io/gh/ropensci/rmangal/branch/master/graph/badge.svg"></img></a>
+            
+            
+                <a href="https://www.repostatus.org/#active"><img alt = "Repostatus" src="https://www.repostatus.org/badges/latest/active.svg"></img></a>
+            
+            
+            
+                <a href="https://github.com/ropensci/onboarding/issues/332"><img alt = "ROpenSci status" src="https://badges.ropensci.org/332_status.svg"></img></a>
+            
+            
+                <a href="https://cran.r-project.org/package=rmangal"><img alt = "CRAN status" src="https://www.r-pkg.org/badges/version/rmangal"></img></a>
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <br><br>
+
+  <footer>
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="hidden-sm hidden-xs">
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+
+  <hr>
+
+  <div class="col-sm-10" style="text-align: center">
+
+    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
+    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
+
+    <i class="fa fa-code" aria-hidden="true"></i> available on
+    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
+
+    <br>
+    All content is licensed under
+    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
+       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
+    </a>
+    unless otherwise specified.
+
+  </div>
+
+
+  <div class="col-sm-2">
+    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
+    <br><br>
+  </div>
+
+
+<div>
+
+        
+
+      </div>
+
+    </div>
+
+  <br>
+  </footer>
+
+  </body>
+
+</html>
+

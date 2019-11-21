@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <head>
+
+    <br><br>
+    <title>A bug in the command wrapper of r-core-base 3.5.1-1&#43;b2</title>
+
+    
+    <style>
+
+    html body {
+        font-family: ZgotmplZ, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #2196F3;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="../../../css/main.css">
+
+
+<link rel="stylesheet" href="../../../css/perso.css">
+
+<link rel="stylesheet" href="../../../css/creativecommons.css">
+
+<link rel="stylesheet" href="../../../css/flag-icon.css">
+
+
+<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../../css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../../../css/academicons.min.css" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../../js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../../../js/jquery.tocify.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false,
+    }
+    });
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+        <ul class="nav navbar-nav mr-auto">
+          
+          
+          <li><a href="../../../publications/">Publications</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../talks/">Talks&amp;Posters</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../teaching/">Teaching</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../software/">Software</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../econotes/">EcoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../notes/">SilicoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../perso/">Perso</a></li>
+          
+
+
+          
+        </ul>
+        
+
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="navbar-icon"> <a href="../../../"><i class="fa fa-home"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
+          
+        </ul>
+        
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <br>
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <div class="hidden-sm hidden-xs">
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+
+      
+
+<div class="article-meta">
+  <h1><span class="title">A bug in the command wrapper of r-core-base 3.5.1-1&#43;b2</span></h1>
+  <h3><span class="subtitle"></span></h3>
+  
+  <h3 class="date" style="font-size: 1.25em;">November 18, 2018</h2>
+
+  
+  
+    <p class="tags">
+      <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
+      
+        <a href="../../../tags/r"> <kbd class="item-tag">R</kbd></a>
+      
+        <a href="../../../tags/command-wrapper"> <kbd class="item-tag">command wrapper</kbd></a>
+      
+        <a href="../../../tags/efficiency"> <kbd class="item-tag">efficiency</kbd></a>
+      
+    </p>
+  
+  
+
+  
+  
+  
+
+  <br>
+
+</div>
+
+<p>Today, as I working on a post, I got this issue when using the R command wrapper:</p>
+
+<pre><code class="language-R">$ Rscript --no-site-file -e 'blogdown::serve_site()'
+/usr/lib/R/bin/R: line 193: /usr/bin/sed: No such file or directory
+ERROR: option '-e' requires a non-empty argument
+</code></pre>
+
+<p>I did not understand what happened so I decided to google it! The <a href="https://www.mail-archive.com/search?l=debian-bugs-dist@lists.debian.org&amp;q=subject:%22Bug%23913982%5C%3A+r%5C-base%5C-core%5C%3A+R+executable+wrapper+scripts+hard%5C-code+the+wrong+path+to+sed.%22&amp;o=newest&amp;f=1" target="_blank">bug was already identified and reported 😄</a>. A side note to mention that several packages now imports
+<a href="https://cran.r-project.org/web/packages/callr/index.html" target="_blank">callr</a> (for instance
+<a href="https://pkgdown.r-lib.org/" target="_blank">pkgdown</a>) and as it uses the R command wrapper
+(if I understand correctly) the current bug actually affects several different
+packages. A simple example is when I try to rebuild the website of <a href="https://cran.r-project.org/web/packages/rcites/index.html" target="_blank">rcites</a>
+(using pkgdown):</p>
+
+<pre><code class="language-R">R&gt; pkgdown::build_site()
+/usr/lib/R/bin/R: line 201: /usr/bin/sed: No such file or directory
+ERROR: option '-f' requires a filename argument
+Error: callr failed, could not start R, exited with non-zero status, has crashed or was killed /usr/lib/R/bin/R: line 201: /usr/bin/sed: No such file or directory
+ERROR: option '-f' requires a filename argument
+</code></pre>
+
+<p>Solution? Dirk Eddelbuettel is working on this, so it should be fixed very soon!</p>
+
+<blockquote>
+<p>I think I&rsquo;ll just build and ship a fresh 3.5.1-2 which should take care of this.</p>
+</blockquote>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <br><br>
+
+  <footer>
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="hidden-sm hidden-xs">
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+
+  <hr>
+
+  <div class="col-sm-10" style="text-align: center">
+
+    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
+    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
+
+    <i class="fa fa-code" aria-hidden="true"></i> available on
+    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
+
+    <br>
+    All content is licensed under
+    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
+       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
+    </a>
+    unless otherwise specified.
+
+  </div>
+
+
+  <div class="col-sm-2">
+    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
+    <br><br>
+  </div>
+
+
+<div>
+
+        
+
+      </div>
+
+    </div>
+
+  <br>
+  </footer>
+
+  </body>
+
+</html>
+

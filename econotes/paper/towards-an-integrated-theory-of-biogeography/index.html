@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <head>
+
+    <br><br>
+    <title>Towards an integrated theory of biogeography</title>
+
+    
+    <style>
+
+    html body {
+        font-family: ZgotmplZ, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #2196F3;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="../../../css/main.css">
+
+
+<link rel="stylesheet" href="../../../css/perso.css">
+
+<link rel="stylesheet" href="../../../css/creativecommons.css">
+
+<link rel="stylesheet" href="../../../css/flag-icon.css">
+
+
+<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../../css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../../../css/academicons.min.css" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../../js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../../../js/jquery.tocify.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false,
+    }
+    });
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+        <ul class="nav navbar-nav mr-auto">
+          
+          
+          <li><a href="../../../publications/">Publications</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../talks/">Talks&amp;Posters</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../teaching/">Teaching</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../software/">Software</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../econotes/">EcoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../notes/">SilicoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../perso/">Perso</a></li>
+          
+
+
+          
+        </ul>
+        
+
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="navbar-icon"> <a href="../../../"><i class="fa fa-home"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
+          
+        </ul>
+        
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <br>
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <div class="hidden-sm hidden-xs">
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+
+      
+
+<div class="article-meta">
+  <h1><span class="title">Towards an integrated theory of biogeography</span></h1>
+  <h3><span class="subtitle"></span></h3>
+  <h2 class="author">Kevin Cazelles</h2>
+  <h3 class="date" style="font-size: 1.25em;">January 11, 2016</h2>
+
+  
+  
+  
+
+  
+  
+  
+
+  <br>
+
+</div>
+
+<p>Dominique Gravel, Nicolas Mouquet, David Mouillot and I have recently published a paper in <a href="http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1600-0587" target="_blank"><em>Ecography</em></a> entitled <a href="http://onlinelibrary.wiley.com/doi/10.1111/ecog.01714/abstract" target="_blank">&lsquo;On the integration of biotic interaction and environmental constraints at the biogeographical scale&rsquo;</a> where we develop some ideas about how ecological interactions and abiotic factors must be taken together into account to better predict species&rsquo; distribution. As suggested during the editing process, we wrote a <a href="http://www.ecography.org/blog/towards-integrated-theory-biogeography" target="_blank">blog post for <em>Ecography</em></a> that summarizes our paper. I think blog posts are an useful way to promote one&rsquo;s work and also a good compromise between reading the abstract and reading the entire paper. We may also get more by reading the blog post than glancing over the paper.</p>
+
+<p>In addition of sharing this blog post on my own blog, I would like to confess two regrets regarding this paper. First, I did not make any code available. Even if the core of the model does not take that much time to be implemented, I think it is good practice to make code available as it enhances reproducibility and it may save some times for potential users of the model. In my defense, I became familiar with GitHub right after the first submission of the paper&hellip; That being said, I will push myself to provide a version of the code available on GitHub in the very next days. Once it will be done, I will write a blog post saying so! My second regret regards the math of the paper. I have actually spent few hours to derive all the equations to get an exact solution (simple math though). However I didn&rsquo;t fully value this work given our target journal. I hope to do so for the next paper that should involve more maths.</p>
+
+<p><br/></p>
+
+<p><strong>See ya next post!</strong></p>
+
+<p><br></p>
+
+<p><i class="fa fa-pencil" aria-hidden="true"></i> Edited: 2019-02-05</p>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <br><br>
+
+  <footer>
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="hidden-sm hidden-xs">
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+
+  <hr>
+
+  <div class="col-sm-10" style="text-align: center">
+
+    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
+    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
+
+    <i class="fa fa-code" aria-hidden="true"></i> available on
+    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
+
+    <br>
+    All content is licensed under
+    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
+       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
+    </a>
+    unless otherwise specified.
+
+  </div>
+
+
+  <div class="col-sm-2">
+    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
+    <br><br>
+  </div>
+
+
+<div>
+
+        
+
+      </div>
+
+    </div>
+
+  <br>
+  </footer>
+
+  </body>
+
+</html>
+

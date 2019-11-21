@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <head>
+
+    <br><br>
+    <title>My first workflow with GitHub Actions</title>
+
+    
+    <style>
+
+    html body {
+        font-family: ZgotmplZ, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #2196F3;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="../../../css/main.css">
+
+
+<link rel="stylesheet" href="../../../css/perso.css">
+
+<link rel="stylesheet" href="../../../css/creativecommons.css">
+
+<link rel="stylesheet" href="../../../css/flag-icon.css">
+
+
+<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../../css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../../../css/academicons.min.css" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../../js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../../../js/jquery.tocify.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false,
+    }
+    });
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+        <ul class="nav navbar-nav mr-auto">
+          
+          
+          <li><a href="../../../publications/">Publications</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../talks/">Talks&amp;Posters</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../teaching/">Teaching</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../software/">Software</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../econotes/">EcoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../notes/">SilicoNotes</a></li>
+          
+
+
+          
+          
+          <li><a href="../../../perso/">Perso</a></li>
+          
+
+
+          
+        </ul>
+        
+
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="navbar-icon"> <a href="../../../"><i class="fa fa-home"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
+          
+          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
+          
+        </ul>
+        
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <br>
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <div class="hidden-sm hidden-xs">
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+
+      
+
+<div class="article-meta">
+  <h1><span class="title">My first workflow with GitHub Actions</span></h1>
+  <h3><span class="subtitle"></span></h3>
+  
+  <h3 class="date" style="font-size: 1.25em;">November 20, 2019</h2>
+
+  
+  
+    <p class="tags">
+      <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
+      
+        <a href="../../../tags/continuous-integration"> <kbd class="item-tag">continuous integration</kbd></a>
+      
+        <a href="../../../tags/github"> <kbd class="item-tag">GitHub</kbd></a>
+      
+        <a href="../../../tags/github-actions"> <kbd class="item-tag">GitHub Actions</kbd></a>
+      
+        <a href="../../../tags/gh-pages"> <kbd class="item-tag">gh-pages</kbd></a>
+      
+    </p>
+  
+  
+
+  
+  
+  
+
+  <br>
+
+</div>
+
+
+
+<h3 id="in-revision">🚧 in Revision 🚧</h3>
+
+<p>As explained on <a href="https://github.com/features/actions" target="_blank">GitHub</a>:</p>
+
+<blockquote>
+<p>GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.</p>
+</blockquote>
+
+<p>I&rsquo;ve heard about this feature and I decided to give it a first go yesterday as I
+wanted to deploy a notebook for the <a href="https://github.com/McCannLab/TheoryClub" target="_blank">McCann Lab&rsquo;s Theory
+Club</a> built with
+<a href="https://bookdown.org/" target="_blank">bookdown</a>. As it uses the form of a R package, I figured
+the easiest approach was to google &ldquo;github actions R&rdquo; and this is how I learned
+about the R package <a href="https://github.com/r-lib/ghactions" target="_blank">ghactions</a>. This
+package generates the file you need to set up your GitHub Actions workflow, i.e.
+a <a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML file</a> in <code>.github/workflows</code>. Given
+that the notebook I was deploying was a static website I opted for <code>website()</code>
+as a workflow:</p>
+
+<pre><code class="language-R">R&gt; library(ghactions)
+R&gt; use_ghactions(workflow = website())
+</code></pre>
+
+<p>With this first file in hand, I then examined the the <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions" target="_blank">documentation</a> as well as three GitHub repositories where I found valuable examples:</p>
+
+<ul>
+<li><a href="https://github.com/jimhester/r-actions-test/blob/master/.github/workflows" target="_blank">https://github.com/jimhester/r-actions-test/blob/master/.github/workflows</a></li>
+<li><a href="https://github.com/r-lib/ghactions/blob/master/.github/workflows/main.yml" target="_blank">https://github.com/r-lib/ghactions/blob/master/.github/workflows/main.yml</a></li>
+<li><a href="https://github.com/peaceiris/actions-gh-pages" target="_blank">https://github.com/peaceiris/actions-gh-pages</a></li>
+</ul>
+
+<p>and tweaked the file based on these! Belwo is the final version of my workflow (see <a href="https://github.com/McCannLab/TheoryClub/blob/master/.github/workflows/main.yml" target="_blank">the file on GitHub</a>):</p>
+
+<pre><code class="language-yaml">name: Render and deploy GitBook
+'on':
+  - push
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container: rocker/verse:latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: |-
+          Rscript -e &quot;install.packages(c('remotes', 'bookdown'), repos = 'https://muug.ca/mirror/cran/')&quot;
+          Rscript -e &quot;remotes::install_deps(dependencies = TRUE, repos = 'https://muug.ca/mirror/cran/')&quot;
+      - name: Build GitBook
+        run: |-
+          Rscript -e &quot;bookdown::render_book('index.Rmd', 'bookdown::gitbook')&quot;
+      - name: Deploy GitBook to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./_book
+</code></pre>
+
+<p>which worked well:</p>
+
+<p><img src="ghactions00.png" alt="" /></p>
+
+<p>After ~3min, the job was completed and the website deployed 🎉.</p>
+
+<p><img src="ghactions01.png" alt="" /></p>
+
+<p>Something that is worth noticing is that it is designed to work with <a href="https://www.docker.com/" target="_blank">Docker</a> which makes GitHub Actions quite powerful because setting up an environment becomes <em>almost</em> trivial! In my case, I basically needed Linux + R + publishing stuff, and this only required the following two lines (thanks to the great work of the <a href="https://www.rocker-project.org/" target="_blank">Rocker</a> team 👏):</p>
+
+<pre><code class="language-yaml">runs-on: ubuntu-18.04
+container: rocker/verse:latest
+</code></pre>
+
+<p>The rest of the setps are rather self explanatory. Note that to understand how to deplow the website I followed the guidelines available on the README of this repository <a href="https://github.com/peaceiris/actions-gh-pages" target="_blank">peaceiris/actions-gh-pages</a> (very well laid-out). The last step was to add the badge, I used ghactions<sup class="footnote-ref" id="fnref:usethis"><a href="#fn:usethis">1</a></sup> once more:</p>
+
+<pre><code>R&gt; ghactions::use_ghactions_badge()
+</code></pre>
+
+<p>to generate the following badge<sup class="footnote-ref" id="fnref:badge"><a href="#fn:badge">2</a></sup>:</p>
+
+<pre><code class="language-markdown">[![Actions Status](https://github.com/McCannLab/TheoryClub/workflows/Render%20and%20deploy%20GitBook/badge.svg)](https://github.com/McCannLab/TheoryClub/actions)
+</code></pre>
+
+<p>The workflow and the website are available <a href="https://github.com/McCannLab/TheoryClub" target="_blank">in the repository of the theory club</a> and if you want to learn more about it, you should have a look at the <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions" target="_blank">documentation</a>, there are also several blogposts introducing this feature (e.g. <a href="https://tech.paulcz.net/blog/intro-to-github-actions/" target="_blank">one by Paul Czarkowski</a>, <a href="https://scotch.io/bar-talk/introducing-github-actions" target="_blank">another by Austin Roy</a>)!</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:usethis">By the way, some R users may have noticed that this package uses the same semantic as the other <a href="https://github.com/r-lib/ghactions" target="_blank">usethis</a>) functions 😏!
+ <a class="footnote-return" href="#fnref:usethis"><sup>^</sup></a></li>
+<li id="fn:badge">I simply edited the URL.
+ <a class="footnote-return" href="#fnref:badge"><sup>^</sup></a></li>
+</ol>
+</div>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <br><br>
+
+  <footer>
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="hidden-sm hidden-xs">
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+
+  <hr>
+
+  <div class="col-sm-10" style="text-align: center">
+
+    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
+    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
+
+    <i class="fa fa-code" aria-hidden="true"></i> available on
+    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
+
+    <br>
+    All content is licensed under
+    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
+       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
+    </a>
+    unless otherwise specified.
+
+  </div>
+
+
+  <div class="col-sm-2">
+    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
+    <br><br>
+  </div>
+
+
+<div>
+
+        
+
+      </div>
+
+    </div>
+
+  <br>
+  </footer>
+
+  </body>
+
+</html>
+

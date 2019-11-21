@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on KevCaz Home Page</title>
+    <link>https://kevcaz.github.io/tags/git/</link>
+    <description>Recent content in Git on KevCaz Home Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Kevin Cazelles. </copyright>
+    <lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kevcaz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prezto&#39;s aliases for git</title>
+      <link>https://kevcaz.github.io/notes/git/aliasgitaction/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kevcaz.github.io/notes/git/aliasgitaction/</guid>
+      <description>A few days ago, as I was having a look at the list of aliases I use with Zsh, I realized that there was a ton of aliases available that I did not created:
+$ alias g=git gCO=&#39;gCo $(gCl)&#39; gCT=&#39;gCt $(gCl)&#39; gCa=&#39;git add $(gCl)&#39; gCe=&#39;git mergetool $(gCl)&#39; gCl=&#39;git --no-pager diff --name-only --diff-filter=U&#39; gCo=&#39;git checkout --ours --&#39; gCt=&#39;git checkout --theirs --&#39; [...] gws=&#39;git status --ignore-submodules=${_git_status_ignore_submodules} --short&#39; gwx=&#39;git rm -r&#39;  I had two thoughts while I was examining those:</description>
+    </item>
+    
+    <item>
+      <title>Emoticons in commit messages for manuscripts</title>
+      <link>https://kevcaz.github.io/notes/git/commitmessages4ms/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kevcaz.github.io/notes/git/commitmessages4ms/</guid>
+      <description>I recently wrote a note about using emoticons in a standard way in commit messages and I now use them in a standard way following Gitmoji. I do so for my code, but I also use git for manuscrits and I also try to standardize the way I use emoticons in that case. Below is the set of emoticons I am currently using for manuscrits:
+ 📝 pencil add a significant piece of writing, paragraph; ✏️ pencil2typos; 📊 bar_chart figures added or edited (figure or its caption); 🗑 wastebasket delete an file; ✨ sparkles integrate co-author&amp;rsquo;s comment(s)/work; 🎉 tada address reviewer&amp;rsquo;s comment(s); ⬆️ arrow_up version submitted; 🚀 rocket version accepted.</description>
+    </item>
+    
+    <item>
+      <title>Emoticons in commit messages</title>
+      <link>https://kevcaz.github.io/notes/git/commitmessages/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kevcaz.github.io/notes/git/commitmessages/</guid>
+      <description>When you are working on a project with GitHub (or a similar web service based on ) that has tens of commits, using emoticons in commit messages makes the search in the history of your project very efficient. To add one emoticon to your commit message, you must use its name (check this cheat sheet) within colons in the commit message, e.g. &amp;ldquo;add this :emoticon_name:&amp;ldquo;. Personally, I mostly use the following emoticon:</description>
+    </item>
+    
+  </channel>
+</rss>
