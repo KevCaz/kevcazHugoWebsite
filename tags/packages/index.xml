@@ -1,27 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Packages on KevCaz Home Page</title>
-    <link>https://kevcaz.github.io/tags/packages/</link>
-    <description>Recent content in Packages on KevCaz Home Page</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Kevin Cazelles. </copyright>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kevcaz.github.io/tags/packages/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>The number of dependencies</title>
-      <link>https://kevcaz.github.io/notes/r/packagedepenncies/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kevcaz.github.io/notes/r/packagedepenncies/</guid>
-      <description>I was looking at some issues on GitHub when I found this example provided by Dirk Eddelbuettel to evaluate the number of species of a dependencies of a package. I decided to experiment a little bit package_dependencies().
-R&amp;gt; library(tools) R&amp;gt; ap &amp;lt;- available.packages() R&amp;gt; nrow(ap) # nb available package [1] 13385  Retrieve the packages rcites depends on:
-R&amp;gt; rc &amp;lt;- tools::package_dependencies(&amp;quot;rcites&amp;quot;, ap, &amp;quot;Imports&amp;quot;) R&amp;gt; rc $rcites [1] &amp;quot;httr&amp;quot; &amp;quot;jsonlite&amp;quot; &amp;quot;data.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>packages on KevCaz Home Page</title><link>https://kevcaz.github.io/tags/packages/</link><description>Recent content in packages on KevCaz Home Page</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; 2018 Kevin Cazelles.</copyright><lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://kevcaz.github.io/tags/packages/index.xml" rel="self" type="application/rss+xml"/><item><title>The number of dependencies</title><link>https://kevcaz.github.io/notes/r/packagedepenncies/</link><pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate><guid>https://kevcaz.github.io/notes/r/packagedepenncies/</guid><description>I was looking at some issues on GitHub when I found this example provided by Dirk Eddelbuettel to evaluate the number of species of a dependencies of a package. I decided to experiment a little bit package_dependencies().
+R&amp;gt; library(tools) R&amp;gt; ap &amp;lt;- available.packages() R&amp;gt; nrow(ap) # nb available package [1] 13385 Retrieve the packages rcites depends on:
+R&amp;gt; rc &amp;lt;- tools::package_dependencies(&amp;quot;rcites&amp;quot;, ap, &amp;quot;Imports&amp;quot;) R&amp;gt; rc $rcites [1] &amp;quot;httr&amp;quot; &amp;quot;jsonlite&amp;quot; &amp;quot;data.</description></item></channel></rss>

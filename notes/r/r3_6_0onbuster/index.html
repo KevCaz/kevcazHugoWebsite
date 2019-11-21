@@ -1,113 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-
-  <head>
-
-    <br><br>
-    <title>Upgrading to R.3.6.0 on Debian Buster</title>
-
-    
-    <style>
-
-    html body {
-        font-family: ZgotmplZ, sans-serif;
-        background-color: white;
-    }
-
-    :root {
-        --accent: #2196F3;
-        --border-width:  0 ;
-    }
-
-</style>
-
-
-<link rel="stylesheet" href="../../../css/main.css">
-
-
-<link rel="stylesheet" href="../../../css/perso.css">
-
-<link rel="stylesheet" href="../../../css/creativecommons.css">
-
-<link rel="stylesheet" href="../../../css/flag-icon.css">
-
-
-<link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="../../../css/font-awesome.min.css">
-
-<link rel="stylesheet" href="../../../css/academicons.min.css" />
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa%20One">
-
-
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../../js/jquery-ui-1.9.1.custom.min.js"></script>
-<script src="../../../js/jquery.tocify.min.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css">
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
+<!doctype html><html lang=en-us><head><head><br><br><title>Upgrading to R.3.6.0 on Debian Buster</title><style>html body{font-family:ZgotmplZ,sans-serif;background-color:#fff}:root{--accent: #2196F3;--border-width:  0 }</style><link rel=stylesheet href=../../../css/main.css><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/creativecommons.css><link rel=stylesheet href=../../../css/flag-icon.css><link href=https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css rel=stylesheet><link rel=stylesheet href=../../../css/font-awesome.min.css><link rel=stylesheet href=../../../css/academicons.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Changa%20One"><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script><script src=../../../js/jquery-ui-1.9.1.custom.min.js></script><script src=../../../js/jquery.tocify.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//bash.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//html.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//julia.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//python.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//r.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//rust.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//xml.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//yaml.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//tex.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//shell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages//matlab.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/tomorrow-night-eighties.min.css><script type=text/x-mathjax-config>
   MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -115,266 +6,54 @@
         processEscapes: false,
     }
     });
-    </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
-
-
-    <meta name="generator" content="Hugo 0.53" />
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  </head>
-</head>
-
-
-<body>
-
-  <nav class="navbar navbar-default navbar-fixed-top">
-
-    <div class="container">
-
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-        
-        <ul class="nav navbar-nav mr-auto">
-          
-          
-          <li><a href="../../../publications/">Publications</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../talks/">Talks&amp;Posters</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../teaching/">Teaching</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../software/">Software</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../econotes/">EcoNotes</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../notes/">SilicoNotes</a></li>
-          
-
-
-          
-          
-          <li><a href="../../../perso/">Perso</a></li>
-          
-
-
-          
-        </ul>
-        
-
-        
-        <ul class="nav navbar-nav navbar-right">
-          
-          <li class="navbar-icon"> <a href="../../../"><i class="fa fa-home"></i></a></li>
-          
-          <li class="navbar-icon"> <a href="https://insileco.github.io/"><i class="fa fa-external-link-square"></i></a></li>
-          
-          <li class="navbar-icon"> <a href="https://www.github.com/KevCaz"><i class="fa fa-github"></i></a></li>
-          
-        </ul>
-        
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </nav>
-
-  <br>
-
-
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="col-sm-2">
-      <div class="hidden-sm hidden-xs">
-
-        
-
-        
-
-      </div>
-    </div>
-
-    <div class="col-sm-10">
-
-      
-
-<div class="article-meta">
-  <h1><span class="title">Upgrading to R.3.6.0 on Debian Buster</span></h1>
-  <h3><span class="subtitle"></span></h3>
-  
-  <h3 class="date" style="font-size: 1.25em;">June 26, 2019</h2>
-
-  
-  
-    <p class="tags">
-      <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
-      
-        <a href="../../../tags/debian"> <kbd class="item-tag">Debian</kbd></a>
-      
-        <a href="../../../tags/apt-get"> <kbd class="item-tag">apt-get</kbd></a>
-      
-        <a href="../../../tags/r"> <kbd class="item-tag">R</kbd></a>
-      
-    </p>
-  
-  
-
-  
-  
-  
-
-  <br>
-
-</div>
-
-<p>Since March of this year, <a href="https://release.debian.org/buster/freeze_policy.html" target="_blank">Debian Buster (Debian 10) has been frozen and has
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML" async></script><link rel=stylesheet href=https://unpkg.com/leaflet@1.5.1/dist/leaflet.css integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin><script src=https://unpkg.com/leaflet@1.5.1/dist/leaflet.js integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin></script><meta name=generator content="Hugo 0.57.2"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"></head></head><body><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#bs-example-navbar-collapse-1>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav mr-auto"><li><a href=../../../publications/>Publications</a></li><li><a href=../../../talks/>Talks&amp;Posters</a></li><li><a href=../../../teaching/>Teaching</a></li><li><a href=../../../software/>Software</a></li><li><a href=../../../econotes/>EcoNotes</a></li><li><a href=../../../notes/>SilicoNotes</a></li><li><a href=../../../perso/>Perso</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=../../../><i class="fa fa-home"></i></a></li><li class=navbar-icon><a href=https://insileco.github.io/><i class="fa fa-external-link-square"></i></a></li><li class=navbar-icon><a href=https://www.github.com/KevCaz><i class="fa fa-github"></i></a></li></ul></ul></div></div></nav><br><div class=container><div class=row><div class=col-sm-2><div class="hidden-sm hidden-xs"></div></div><div class=col-sm-10><div class=article-meta><h1><span class=title>Upgrading to R.3.6.0 on Debian Buster</span></h1><h3><span class=subtitle></span></h3><h3 class=date style=font-size:1.25em>June 26, 2019</h2><p class=tags><i class="fa fa-tags" aria-hidden=true></i>&nbsp;
+<a href=../../../tags/debian><kbd class=item-tag>Debian</kbd></a>
+<a href=../../../tags/apt-get><kbd class=item-tag>apt-get</kbd></a>
+<a href=../../../tags/r><kbd class=item-tag>R</kbd></a></p><br></div><p>Since March of this year, <a href=https://release.debian.org/buster/freeze_policy.html target=_blank>Debian Buster (Debian 10) has been frozen and has
 become the new stable
 release</a> and for this
-reason the installation of <a href="https://stat.ethz.ch/pipermail/r-announce/2019/000641.html" target="_blank">R 3.6.0 (available since April
+reason the installation of <a href=https://stat.ethz.ch/pipermail/r-announce/2019/000641.html target=_blank>R 3.6.0 (available since April
 26th)</a> on Buster
-requires <a href="https://cran.r-project.org/bin/linux/debian/" target="_blank">the backports kindly provided by Johannes
-Ranke</a>. Yesterday, I decided to install R 3.6.0 on my computer, so I used them, which basically means that:</p>
-
-<ol>
-<li>I appended <code>deb http://cran.wu.ac.at/bin/linux/debian buster-cran35/</code> to <code>/etc/apt/sources.list</code>;</li>
-<li>I added the key to configure the secure apt.</li>
-</ol>
-
-<p>In order to do a fresh install, I first removed all the files related to R 3.5.2, i.e. I opened a terminal and entered:</p>
-
-<pre><code># apt-get --purge remove r-base r-base-dev r-base-core
-</code></pre>
-
-<p>Then, I installed the new version</p>
-
-<pre><code># apt-get update
+requires <a href=https://cran.r-project.org/bin/linux/debian/ target=_blank>the backports kindly provided by Johannes
+Ranke</a>. Yesterday, I decided to install R 3.6.0 on my computer, so I used them, which basically means that:</p><ol><li>I appended <code>deb http://cran.wu.ac.at/bin/linux/debian buster-cran35/</code> to <code>/etc/apt/sources.list</code>;</li><li>I added the key to configure the secure apt.</li></ol><p>In order to do a fresh install, I first removed all the files related to R 3.5.2, i.e. I opened a terminal and entered:</p><pre><code># apt-get --purge remove r-base r-base-dev r-base-core
+</code></pre><p>Then, I installed the new version</p><pre><code># apt-get update
 # apt-get install r-base r-base-dev r-base-core
-</code></pre>
-
-<p>After that, R 3.6.0 was installed and ready to do stats ✅.
+</code></pre><p>After that, R 3.6.0 was installed and ready to do stats ✅.
 Before installing my list of packages, I took two extra steps. First, I
-configured <a href="https://www.oracle.com/java/" target="_blank">Java</a> for R (because some packages
-need it).</p>
-
-<pre><code># R CMD javareconf JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
-</code></pre>
-
-<p>Second, I edited <code>Renviron.site</code>. For Debian-based linux distributions, R 3.6.0
-is now shipped with a <code>Renviron.site</code> file that includes the following line:</p>
-
-<pre><code> _R_CHECK_COMPILATION_FLAGS_KNOWN_='-Wformat -Werror=format-security -Wdate-time'
-</code></pre>
-
-<p>which avoids <a href="https://stat.ethz.ch/pipermail/r-sig-debian/2019-May/003081.html" target="_blank">a note when checking a
+configured <a href=https://www.oracle.com/java/ target=_blank>Java</a> for R (because some packages
+need it).</p><pre><code># R CMD javareconf JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+</code></pre><p>Second, I edited <code>Renviron.site</code>. For Debian-based linux distributions, R 3.6.0
+is now shipped with a <code>Renviron.site</code> file that includes the following line:</p><pre><code> _R_CHECK_COMPILATION_FLAGS_KNOWN_='-Wformat -Werror=format-security -Wdate-time'
+</code></pre><p>which avoids <a href=https://stat.ethz.ch/pipermail/r-sig-debian/2019-May/003081.html target=_blank>a note when checking a
 package</a>. I
 edited this file to add back my list of default packages and the token I used
-for <a href="https://github.com/ropensci/rcites" target="_blank">rcites</a>:</p>
-
-<pre><code>R_DEFAULT_PACKAGES='utils,datasets,grDevices,graphics,stats,methods,devtools'
+for <a href=https://github.com/ropensci/rcites target=_blank>rcites</a>:</p><pre><code>R_DEFAULT_PACKAGES='utils,datasets,grDevices,graphics,stats,methods,devtools'
 
 # TOKENS
 SPECIESPLUS_TOKEN='cannot_reveal_iit'
-</code></pre>
-
-<p>Note that if I would have opened R at this stage it would have complained about uninstalled packages 😉.</p>
-
-<p><br></p>
-
-<p>Once done, I installed the set of 📦 I employ the most. In the past, I
+</code></pre><p>Note that if I would have opened R at this stage it would have complained about uninstalled packages 😉.</p><p><br></p><p>Once done, I installed the set of 📦 I employ the most. In the past, I
 have used <code>sudo apt-get install &quot;r-cran-.*&quot;</code> but decided not to this time.
 First, because I do not use all of them. Second, because I have found some
 conflicts. For instance, I wasn&rsquo;t able to install both <code>r-cran-rmarkdown</code> and
 <code>r-cran-v8</code>: the latter requires <code>libnode64</code> while the former requires <code>nodejs</code>
 which are not compatible&hellip; So if I try to install <code>r-cran-rmarkdown</code> while
-<code>r-cran-v8</code> is installed, I get:</p>
-
-<pre><code>The following packages will be REMOVED:
+<code>r-cran-v8</code> is installed, I get:</p><pre><code>The following packages will be REMOVED:
   libnode64
-</code></pre>
-
-<p>To overcome such issue, I cherry-picked the set of packages to be installed with <code>apt-get</code> and here is my list of packages (note that it triggers the installation of a longer list):</p>
-
-<pre><code># apt-get install r-cran-v8
+</code></pre><p>To overcome such issue, I cherry-picked the set of packages to be installed with <code>apt-get</code> and here is my list of packages (note that it triggers the installation of a longer list):</p><pre><code># apt-get install r-cran-v8
 # apt-get install &quot;r-cran-rcpp.*&quot; r-cran-reticulate r-cran-rjava r-cran-devtools r-cran-doparallel r-cran-sf r-cran-lwgeom r-cran-lme4 r-cran-ade4 r-cran-ape r-cran-vegan r-cran-rgl r-cran-webshot r-cran-cli r-cran-pillar r-cran-taxize r-cran-repr r-cran-reprex r-cran-biocmanager
-</code></pre>
-
-<p>By the way, if you are looking for a specific package with <code>apt-get</code>, you can
+</code></pre><p>By the way, if you are looking for a specific package with <code>apt-get</code>, you can
 use <code>apt search &quot;r-cran-&quot;</code> for CRAN packages, and <code>apt search &quot;r-bioc-&quot;</code> for
 Bioconductor ones. This being done, I opened R and did a quick check of the
-default paths to library :</p>
-
-<pre><code class="language-R">R&gt; .libPaths()
+default paths to library :</p><pre><code class=language-R>R&gt; .libPaths()
 [1] &quot;/usr/local/lib/R/site-library&quot; &quot;/usr/lib/R/site-library&quot;      
 [3] &quot;/usr/lib/R/library&quot;
-</code></pre>
-
-<p>Packages installed where in two of these 3:</p>
-
-<ul>
-<li><code>/usr/lib/R/library</code> includes all the core and recommended packages.</li>
-<li><code>/usr/lib/R/site-library</code> includes the packages installed via <code>apt-get</code></li>
-</ul>
-
-<p>I decided to use <code>/usr/local/lib/R/site-library</code> to store packages I would
+</code></pre><p>Packages installed where in two of these 3:</p><ul><li><code>/usr/lib/R/library</code> includes all the core and recommended packages.</li><li><code>/usr/lib/R/site-library</code> includes the packages installed via <code>apt-get</code></li></ul><p>I decided to use <code>/usr/local/lib/R/site-library</code> to store packages I would
 install via <code>install.packages()</code>. To do so, I simply changed the permission to
 make this folder writable by myself without using super user privileges: <code>sudo
-chmod 777 /usr/local/lib/R/site-library</code>. Then, I completed the installation:</p>
-
-<pre><code class="language-R">install.packages(c('docopt', 'tidyverse', 'pkgdown', 'blogdown', 'Hmisc', 'IRkernel'))
-</code></pre>
-
-<p>This way, I do not need to use a <a href="https://community.rstudio.com/t/help-regarding-package-installation-renviron-rprofile-r-libs-r-libs-site-and-r-libs-user-oh-my/13888/5" target="_blank">user library</a> which I don&rsquo;t really need as I am the only user of my computer 😅.</p>
-
-<p><br></p>
-
-<p>To conclude this post, I&rsquo;d like to show the list of packages included in the 3 different folders:</p>
-
-<pre><code class="language-R">R&gt; pkgs &lt;- lapply(.libPaths(), list.files)
+chmod 777 /usr/local/lib/R/site-library</code>. Then, I completed the installation:</p><pre><code class=language-R>install.packages(c('docopt', 'tidyverse', 'pkgdown', 'blogdown', 'Hmisc', 'IRkernel'))
+</code></pre><p>This way, I do not need to use a <a href=https://community.rstudio.com/t/help-regarding-package-installation-renviron-rprofile-r-libs-r-libs-site-and-r-libs-user-oh-my/13888/5 target=_blank>user library</a> which I don&rsquo;t really need as I am the only user of my computer 😅.</p><p><br></p><p>To conclude this post, I&rsquo;d like to show the list of packages included in the 3 different folders:</p><pre><code class=language-R>R&gt; pkgs &lt;- lapply(.libPaths(), list.files)
 R&gt; pkgs
 [[1]]
  [1] &quot;acepack&quot;      &quot;assertthat&quot;   &quot;BH&quot;           &quot;blogdown&quot;     &quot;bookdown&quot;    
@@ -441,88 +120,14 @@ R&gt; pkgs
 [21] &quot;rpart&quot;        &quot;spatial&quot;      &quot;splines&quot;      &quot;stats&quot;        &quot;stats4&quot;      
 [26] &quot;survival&quot;     &quot;tcltk&quot;        &quot;tools&quot;        &quot;translations&quot; &quot;utils&quot;
 
-</code></pre>
-
-<p>As you may have noticed, some packages are installed in both <code>/usr/local/lib/R/site-library</code> and in <code>/usr/lib/R/site-library</code>:</p>
-
-<pre><code class="language-R">R&gt; pkgs[[1]][pkgs[[1]] %in% pkgs[[2]]]
+</code></pre><p>As you may have noticed, some packages are installed in both <code>/usr/local/lib/R/site-library</code> and in <code>/usr/lib/R/site-library</code>:</p><pre><code class=language-R>R&gt; pkgs[[1]][pkgs[[1]] %in% pkgs[[2]]]
 
 [1] &quot;assertthat&quot; &quot;dplyr&quot;      &quot;glue&quot;       &quot;knitr&quot;      &quot;Rcpp&quot;       &quot;rlang&quot;     
  [7] &quot;rmarkdown&quot;  &quot;tibble&quot;     &quot;tinytex&quot;    &quot;xfun&quot;
-</code></pre>
-
-<p>and R uses the one from <code>/usr/local/lib/R/site-library</code>:</p>
-
-<pre><code class="language-R">R&gt; find.package(&quot;assertthat&quot;)
+</code></pre><p>and R uses the one from <code>/usr/local/lib/R/site-library</code>:</p><pre><code class=language-R>R&gt; find.package(&quot;assertthat&quot;)
 [1] &quot;/usr/local/lib/R/site-library/assertthat&quot;
-</code></pre>
-
-<p>Why are they installed twice? I don&rsquo;t know yet! But I sure will let you know when I understand this!</p>
-
-
-
-
-    </div>
-
-  </div>
-
-</div>
-
-
-  <br><br>
-
-  <footer>
-
-    <div class="row">
-
-      <div class="col-sm-3">
-        <div class="hidden-sm hidden-xs">
-        </div>
-      </div>
-
-      <div class="col-sm-8">
-
-        <div class="row">
-
-  <hr>
-
-  <div class="col-sm-10" style="text-align: center">
-
-    Personnal website built with <i class="icon ion-md-heart"></i>, <a href = "https://gohugo.io/">Hugo</a>
-    and my <a href = "https://github.com/KevCaz/hugo-KevCaz">own theme</a>!
-
-    <i class="fa fa-code" aria-hidden="true"></i> available on
-    <a href = "https://github.com/KevCaz/KevCaz.github.io"><i class="fa fa-github" aria-hidden></i></a>.
-
-    <br>
-    All content is licensed under
-    <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
-       <i class='cc cc-cc-circle cc-1x'></i> <i class='cc cc-by-circle cc-1x'></i>
-       <i class='cc cc-nc-circle cc-1x'></i> <i class='cc cc-sa-circle cc-1x'></i>
-    </a>
-    unless otherwise specified.
-
-  </div>
-
-
-  <div class="col-sm-2">
-    <a href="#"> <i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i> </a>
-    <br><br>
-  </div>
-
-
-<div>
-
-        
-
-      </div>
-
-    </div>
-
-  <br>
-  </footer>
-
-  </body>
-
-</html>
-
+</code></pre><p>Why are they installed twice? I don&rsquo;t know yet! But I sure will let you know when I understand this!</p></div></div></div><br><br><footer><div class=row><div class=col-sm-3><div class="hidden-sm hidden-xs"></div></div><div class=col-sm-8><div class=row><hr><div class=col-sm-10 style=text-align:center>Personnal website built with <i class="icon ion-md-heart"></i>, <a href=https://gohugo.io/>Hugo</a>
+and my <a href=https://github.com/KevCaz/hugo-KevCaz>own theme</a>!
+<i class="fa fa-code" aria-hidden=true></i>available on
+<a href=https://github.com/KevCaz/KevCaz.github.io><i class="fa fa-github" aria-hidden></i></a>.<br>All content is licensed under
+<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/><i class="cc cc-cc-circle cc-1x"></i><i class="cc cc-by-circle cc-1x"></i><i class="cc cc-nc-circle cc-1x"></i><i class="cc cc-sa-circle cc-1x"></i></a>unless otherwise specified.</div><div class=col-sm-2><a href=#><i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden=true></i></a><br><br></div><div></div></div><br></footer></body></html>

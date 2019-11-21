@@ -1,26 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Alias on KevCaz Home Page</title>
-    <link>https://kevcaz.github.io/tags/alias/</link>
-    <description>Recent content in Alias on KevCaz Home Page</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Kevin Cazelles. </copyright>
-    <lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kevcaz.github.io/tags/alias/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Prezto&#39;s aliases for git</title>
-      <link>https://kevcaz.github.io/notes/git/aliasgitaction/</link>
-      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://kevcaz.github.io/notes/git/aliasgitaction/</guid>
-      <description>A few days ago, as I was having a look at the list of aliases I use with Zsh, I realized that there was a ton of aliases available that I did not created:
-$ alias g=git gCO=&#39;gCo $(gCl)&#39; gCT=&#39;gCt $(gCl)&#39; gCa=&#39;git add $(gCl)&#39; gCe=&#39;git mergetool $(gCl)&#39; gCl=&#39;git --no-pager diff --name-only --diff-filter=U&#39; gCo=&#39;git checkout --ours --&#39; gCt=&#39;git checkout --theirs --&#39; [...] gws=&#39;git status --ignore-submodules=${_git_status_ignore_submodules} --short&#39; gwx=&#39;git rm -r&#39;  I had two thoughts while I was examining those:</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>alias on KevCaz Home Page</title><link>https://kevcaz.github.io/tags/alias/</link><description>Recent content in alias on KevCaz Home Page</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; 2018 Kevin Cazelles.</copyright><lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://kevcaz.github.io/tags/alias/index.xml" rel="self" type="application/rss+xml"/><item><title>Prezto&#39;s aliases for git</title><link>https://kevcaz.github.io/notes/git/aliasgitaction/</link><pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate><guid>https://kevcaz.github.io/notes/git/aliasgitaction/</guid><description>A few days ago, as I was having a look at the list of aliases I use with Zsh, I realized that there was a ton of aliases available that I did not created:
+$ alias g=git gCO=&#39;gCo $(gCl)&#39; gCT=&#39;gCt $(gCl)&#39; gCa=&#39;git add $(gCl)&#39; gCe=&#39;git mergetool $(gCl)&#39; gCl=&#39;git --no-pager diff --name-only --diff-filter=U&#39; gCo=&#39;git checkout --ours --&#39; gCt=&#39;git checkout --theirs --&#39; [...] gws=&#39;git status --ignore-submodules=${_git_status_ignore_submodules} --short&#39; gwx=&#39;git rm -r&#39; I had two thoughts while I was examining those:</description></item></channel></rss>
