@@ -29,10 +29,12 @@ decided to do a fresh install of Node.js and npm. Fortunately, the topic is well
 covered online, especially in <a href=https://linuxize.com/post/how-to-install-node-js-on-debian-10/ target=_blank>a very clear article posted on
 Linuxize</a> which
 was very helpful. In a nutshell, there are two simple ways for this
-installation:</p><ol><li>using the Debian package manager;</li><li>using <a href=https://github.com/nvm-sh/nvm target=_blank>NVM (Node Version Manager)</a>.</li></ol><p>The first option is rather straightforward:</p><pre><code>sudo apt-get nodejs
-</code></pre><p>which should also install <code>npm</code>. Note that on Debian Buster, this command
-installs Node.js v12.13.0. The second option requires to run a small command
-line</p><pre><code>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+installation:</p><ol><li>using the Debian package manager;</li><li>using <a href=https://github.com/nvm-sh/nvm target=_blank>NVM (Node Version Manager)</a>.</li></ol><p>The first option is rather straightforward:</p><pre><code>sudo apt-get install nodejs npm
+</code></pre><p>Note that on Debian Buster, you will have the following version installed:</p><pre><code>$ npm -v
+5.8.0
+$ node -v
+v10.15.2
+</code></pre><p>The second option requires to run a small command line</p><pre><code>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 </code></pre><p>which installs Node.js, npm and the following lines to <code>.bashsrc</code>:</p><pre><code>export NVM_DIR=&quot;$HOME/.nvm&quot;
 [ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
 [ -s &quot;$NVM_DIR/bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR/bash_completion&quot;  # This loads nvm bash_com$
@@ -53,7 +55,11 @@ gtop is /home/kevcaz/.nvm/versions/node/v13.0.1/bin/gtop
 </code></pre><p>During this process, I figured that I was able to have two versions installed,
 one installed via <code>apt-get</code> and the other by NVM and so, while I have v13.0.1 installed via NVM, I also had v10.13.0.</p><pre><code>$ whereis node
 node: /usr/bin/node /usr/include/node /home/kevcaz/.nvm/versions/nv13.0.1/bin/node /usr/share/man/man1/node.1.gz
-</code></pre><p>Seemed like this was not a problem but I thought the sane piece of software installed twice at different locations with different versions wasn&rsquo;t the best thing to do and so I removed v10.13.0. I may change this in the future if I nodejs for other Debian packages, in which case I will write a follow up to this note 😄!</p><p>`</p></div></div></div><br><br><footer><div class=row><div class=col-sm-3><div class="hidden-sm hidden-xs"></div></div><div class=col-sm-8></div><div class=bg_grey><div class=row><div class=col-sm-11 style=text-align:center>Personnal website built with <i class="icon ion-md-heart"></i>, <a href=https://gohugo.io/>Hugo</a>,
+</code></pre><p>Seemed like this was not a problem but I thought the sane piece of software
+installed twice at different locations with different versions wasn&rsquo;t the best
+thing to do and so I removed v10.13.0. I may change this in the future if I use
+nodejs for other Debian packages, in which case I will write a follow up to this
+note 😄!</p><p>`</p></div></div></div><br><br><footer><div class=row><div class=col-sm-3><div class="hidden-sm hidden-xs"></div></div><div class=col-sm-8></div><div class=bg_grey><div class=row><div class=col-sm-11 style=text-align:center>Personnal website built with <i class="icon ion-md-heart"></i>, <a href=https://gohugo.io/>Hugo</a>,
 <i class="fa fa-code" aria-hidden=true></i>available on
 <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fa fa-github" aria-hidden></i></a>.
 All content is licensed under
