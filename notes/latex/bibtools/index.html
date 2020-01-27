@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><title>KevCaz&#39;s Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.45a0fb410cb4c2fedb552955d561ef5c7e5c2073b49c6d888256c43144203c75.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz&#39;s Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
-<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks &amp; Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.179b77861f0b204d446615261de12ee0528df8baaea973b346ff1bf4a825d040.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
+<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
 <i class="fas fa-blog"></i>Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')">
 <i class="fas fa-person-booth"></i>Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>Merging .bib files with bibtool</h1><h3 class=date>April 22, 2019<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
 <a href=../../../tags/bibtex><kbd class=item-tag>bibtex</kbd></a>
@@ -8,158 +8,297 @@
 <a href=../../../tags/bibliography><kbd class=item-tag>bibliography</kbd></a></div><br></div><div class=article-main><p>As researchers, we sometimes write manuscripts collectively and remotely in
 <a href=https://www.latex-project.org/>LaTeX</a> (or in a lightweight markup languages
 that is converted into LaTeX at some point). In such case, it is quite
-useful to let co-authors edit their own <code>bib</code> file in order to store the references included in the part of the manuscript they are editing. One way to deal with several <code>bib</code> files is to merge them into one <code>bib</code> file before compiling the final document to <code>pdf</code>. In this note, I exemplify how to do so.</p><p>Let&rsquo;s assume that there are two <code>bib</code> files within the manuscript folder:</p><ol><li><code>kevcaz.bib file</code>, my own list of references;</li><li><code>author.bib</code>, my colleague&rsquo;s references list.</li></ol><p>I added these two files below:</p><p><details><summary><a>click to display kevcaz.bib</a></summary></p><pre><code class=language-latex>% kevcaz.bib
-@Article{	 alroy_new_2015,
-  title		= {A new twist on a very old binary similarity coefficient},
-  volume	= {96},
-  issn		= {0012-9658},
-  doi		= {10.1890/14-0471.1},
-  number	= {2},
-  urldate	= {2019-04-13},
-  journal	= {Ecology},
-  author	= {Alroy, John},
-  year		= {2015},
-  pages		= {575--586}
-}
+useful to let co-authors edit their own <code>bib</code> file in order to store the references included in the part of the manuscript they are editing. One way to deal with several <code>bib</code> files is to merge them into one <code>bib</code> file before compiling the final document to <code>pdf</code>. In this note, I exemplify how to do so.</p><p>Let's assume that there are two <code>bib</code> files within the manuscript folder:</p><ol><li><code>kevcaz.bib file</code>, my own list of references;</li><li><code>author.bib</code>, my colleague's references list.</li></ol><p>I added these two files below:</p><details><summary><a>click to display kevcaz.bib</a></summary><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#6272a4>% kevcaz.bib
+</span><span style=color:#6272a4></span>@Article<span style=color:#8be9fd;font-style:italic>{</span>	 alroy<span style=color:#8be9fd;font-style:italic>_</span>new<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>A new twist on a very old binary similarity coefficient<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>96<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>0012-9658<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1890/14-0471.1<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>2<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-13<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecology<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Alroy, John<span style=color:#8be9fd;font-style:italic>}</span>,
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>575--586<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@Article{	 savage_elevational_2015,
-  title		= {Elevational shifts, biotic homogenization and time lags in
-		  vegetation change during 40 years of climate warming},
-  volume	= {38},
-  issn		= {09067590},
-  doi		= {10.1111/ecog.01131},
-  language	= {en},
-  number	= {6},
-  urldate	= {2019-04-14},
-  journal	= {Ecography},
-  author	= {Savage, Josée and Vellend, Mark},
+@Article<span style=color:#8be9fd;font-style:italic>{</span>	 savage<span style=color:#8be9fd;font-style:italic>_</span>elevational<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>Elevational shifts, biotic homogenization and time lags in
+		  vegetation change during 40 years of climate warming<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>38<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>09067590<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1111/ecog.01131<span style=color:#8be9fd;font-style:italic>}</span>,
+  language	= <span style=color:#8be9fd;font-style:italic>{</span>en<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>6<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-14<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecography<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Savage, Josée and Vellend, Mark<span style=color:#8be9fd;font-style:italic>}</span>,
   month		= jun,
-  year		= {2015},
-  pages		= {546--555}
-}
-</code></pre><p></details></p><p><details></p><p><summary><a>click to display coauthor.bib</a></summary></p><pre><code class=language-latex>% coauthor.bib
-@article{morales-castilla_inferring_2015,
-	title = {Inferring biotic interactions from proxies},
-	volume = {30},
-	issn = {01695347},
-	doi = {10.1016/j.tree.2015.03.014},
-	language = {en},
-	number = {6},
-	urldate = {2018-05-23},
-	journal = {Trends in Ecology \&amp; Evolution},
-	author = {Morales-Castilla, Ignacio and Matias, Miguel G. and Gravel, Dominique and Araújo, Miguel B.},
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>546--555<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
+</code></pre></td></tr></table></div></div></details><details><summary><a>click to display coauthor.bib</a></summary><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#6272a4>% coauthor.bib
+</span><span style=color:#6272a4></span>@article<span style=color:#8be9fd;font-style:italic>{</span>morales-castilla<span style=color:#8be9fd;font-style:italic>_</span>inferring<span style=color:#8be9fd;font-style:italic>_</span>2015,
+	title = <span style=color:#8be9fd;font-style:italic>{</span>Inferring biotic interactions from proxies<span style=color:#8be9fd;font-style:italic>}</span>,
+	volume = <span style=color:#8be9fd;font-style:italic>{</span>30<span style=color:#8be9fd;font-style:italic>}</span>,
+	issn = <span style=color:#8be9fd;font-style:italic>{</span>01695347<span style=color:#8be9fd;font-style:italic>}</span>,
+	doi = <span style=color:#8be9fd;font-style:italic>{</span>10.1016/j.tree.2015.03.014<span style=color:#8be9fd;font-style:italic>}</span>,
+	language = <span style=color:#8be9fd;font-style:italic>{</span>en<span style=color:#8be9fd;font-style:italic>}</span>,
+	number = <span style=color:#8be9fd;font-style:italic>{</span>6<span style=color:#8be9fd;font-style:italic>}</span>,
+	urldate = <span style=color:#8be9fd;font-style:italic>{</span>2018-05-23<span style=color:#8be9fd;font-style:italic>}</span>,
+	journal = <span style=color:#8be9fd;font-style:italic>{</span>Trends in Ecology <span style=color:#ff79c6>\&amp;</span> Evolution<span style=color:#8be9fd;font-style:italic>}</span>,
+	author = <span style=color:#8be9fd;font-style:italic>{</span>Morales-Castilla, Ignacio and Matias, Miguel G. and Gravel, Dominique and Araújo, Miguel B.<span style=color:#8be9fd;font-style:italic>}</span>,
 	month = jun,
-	year = {2015},
-	keywords = {Interaction biotique},
-	pages = {347--356}
-}
+	year = <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+	keywords = <span style=color:#8be9fd;font-style:italic>{</span>Interaction biotique<span style=color:#8be9fd;font-style:italic>}</span>,
+	pages = <span style=color:#8be9fd;font-style:italic>{</span>347--356<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@article{russell_scale_2006,
-	title = {Scale, {Environment}, and {Trophic} {Status}: {The} {Context} {Dependency} of {Community} {Saturation} in {Rocky} {Intertidal} {Communities}},
-	volume = {167},
-	issn = {0003-0147, 1537-5323},
-	shorttitle = {Scale, {Environment}, and {Trophic} {Status}},
-	url = {http://www.journals.uchicago.edu/doi/10.1086/504603},
-	doi = {10.1086/504603}
-}
+@article<span style=color:#8be9fd;font-style:italic>{</span>russell<span style=color:#8be9fd;font-style:italic>_</span>scale<span style=color:#8be9fd;font-style:italic>_</span>2006,
+	title = <span style=color:#8be9fd;font-style:italic>{</span>Scale, <span style=color:#8be9fd;font-style:italic>{</span>Environment<span style=color:#8be9fd;font-style:italic>}</span>, and <span style=color:#8be9fd;font-style:italic>{</span>Trophic<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Status<span style=color:#8be9fd;font-style:italic>}</span>: <span style=color:#8be9fd;font-style:italic>{</span>The<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Context<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Dependency<span style=color:#8be9fd;font-style:italic>}</span> of <span style=color:#8be9fd;font-style:italic>{</span>Community<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Saturation<span style=color:#8be9fd;font-style:italic>}</span> in <span style=color:#8be9fd;font-style:italic>{</span>Rocky<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Intertidal<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Communities<span style=color:#8be9fd;font-style:italic>}</span><span style=color:#8be9fd;font-style:italic>}</span>,
+	volume = <span style=color:#8be9fd;font-style:italic>{</span>167<span style=color:#8be9fd;font-style:italic>}</span>,
+	issn = <span style=color:#8be9fd;font-style:italic>{</span>0003-0147, 1537-5323<span style=color:#8be9fd;font-style:italic>}</span>,
+	shorttitle = <span style=color:#8be9fd;font-style:italic>{</span>Scale, <span style=color:#8be9fd;font-style:italic>{</span>Environment<span style=color:#8be9fd;font-style:italic>}</span>, and <span style=color:#8be9fd;font-style:italic>{</span>Trophic<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Status<span style=color:#8be9fd;font-style:italic>}</span><span style=color:#8be9fd;font-style:italic>}</span>,
+	url = <span style=color:#8be9fd;font-style:italic>{</span>http://www.journals.uchicago.edu/doi/10.1086/504603<span style=color:#8be9fd;font-style:italic>}</span>,
+	doi = <span style=color:#8be9fd;font-style:italic>{</span>10.1086/504603<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@Article{	 alroy_new_2015,
-  title		= {A new twist on a very old binary similarity coefficient},
-  volume	= {96},
-  issn		= {0012-9658},
-  doi		= {10.1890/14-0471.1},
-  number	= {2},
-  urldate	= {2019-04-13},
-  journal	= {Ecology},
-  author	= {Alroy, John},
-  year		= {2015},
-  pages		= {575--586}
-}
-</code></pre><p></details></p><p>Then, what I want is to merge them into one single file <code>biblio_sorted.bib</code> (the
+@Article<span style=color:#8be9fd;font-style:italic>{</span>	 alroy<span style=color:#8be9fd;font-style:italic>_</span>new<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>A new twist on a very old binary similarity coefficient<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>96<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>0012-9658<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1890/14-0471.1<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>2<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-13<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecology<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Alroy, John<span style=color:#8be9fd;font-style:italic>}</span>,
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>575--586<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
+</code></pre></td></tr></table></div></div></details><p>Then, what I want is to merge them into one single file <code>biblio_sorted.bib</code> (the
 one to be used as reference data base for the manuscript) and I also want to
 remove all duplicates before the merge. How to do so? Well, that is the king of
 situation where <a href="https://ctan.org/pkg/bibtool?lang=en">bibtool</a> comes in handy.
 This command line tool allows several manipulations of <code>.bib</code> files and here I
 use it to merge two <code>bib</code> file, sort the entries in alphabetical order and
-remove all duplicates with single line of command:</p><pre><code class=language-shell>$ bibtool -s -d kevcaz.bib coauthor.bib -o biblio_sorted.bib
+remove all duplicates with single line of command:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ bibtool -s -d kevcaz.bib coauthor.bib -o biblio_sorted.bib
 *** BibTool WARNING: Possible double entries discovered:
-***     alroy_new_2015 =?= alroy_new_2015
+***     <span style=color:#8be9fd;font-style:italic>alroy_new_2015</span> <span style=color:#ff79c6>=</span>?<span style=color:#ff79c6>=</span> alroy_new_2015
 ***     alroy_new_2015
-</code></pre><p>Where :
-- option <code>-s</code> sorts entries in alphabetical order;
-- option <code>-d</code> comments out duplicates
-- option <code>-o</code> indicate the name of the output files.</p><p>Below is the final file with two comments of my own:</p><p><details><summary><a>click to display biblio_sorted.bib</a></summary></p><pre><code class=language-latex>% biblio_sorted
-@Article{	  alroy_new_2015,
-  title		= {A new twist on a very old binary similarity coefficient},
-  volume	= {96},
-  issn		= {0012-9658},
-  doi		= {10.1890/14-0471.1},
-  number	= {2},
-  urldate	= {2019-04-13},
-  journal	= {Ecology},
-  author	= {Alroy, John},
-  year		= {2015},
-  pages		= {575--586}
-}
+</code></pre></td></tr></table></div></div><p>Where :</p><ul><li>option <code>-s</code> sorts entries in alphabetical order;</li><li>option <code>-d</code> comments out duplicates</li><li>option <code>-o</code> indicate the name of the output files.</li></ul><p>Below is the final file with two comments of my own:</p><details><summary><a>click to display biblio_sorted.bib</a></summary><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#6272a4>% biblio_sorted
+</span><span style=color:#6272a4></span>@Article<span style=color:#8be9fd;font-style:italic>{</span>	  alroy<span style=color:#8be9fd;font-style:italic>_</span>new<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>A new twist on a very old binary similarity coefficient<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>96<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>0012-9658<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1890/14-0471.1<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>2<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-13<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecology<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Alroy, John<span style=color:#8be9fd;font-style:italic>}</span>,
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>575--586<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-% NB: '###' comments the reference out
-###Article{	  alroy_new_2015,
-  title		= {A new twist on a very old binary similarity coefficient},
-  volume	= {96},
-  issn		= {0012-9658},
-  doi		= {10.1890/14-0471.1},
-  number	= {2},
-  urldate	= {2019-04-13},
-  journal	= {Ecology},
-  author	= {Alroy, John},
-  year		= {2015},
-  pages		= {575--586}
-}
+<span style=color:#6272a4>% NB: &#39;###&#39; comments the reference out
+</span><span style=color:#6272a4></span>###Article<span style=color:#8be9fd;font-style:italic>{</span>	  alroy<span style=color:#8be9fd;font-style:italic>_</span>new<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>A new twist on a very old binary similarity coefficient<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>96<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>0012-9658<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1890/14-0471.1<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>2<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-13<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecology<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Alroy, John<span style=color:#8be9fd;font-style:italic>}</span>,
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>575--586<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@Article{	  morales-castilla_inferring_2015,
-  title		= {Inferring biotic interactions from proxies},
-  volume	= {30},
-  issn		= {01695347},
-  doi		= {10.1016/j.tree.2015.03.014},
-  language	= {en},
-  number	= {6},
-  urldate	= {2018-05-23},
-  journal	= {Trends in Ecology \&amp; Evolution},
-  author	= {Morales-Castilla, Ignacio and Matias, Miguel G. and
-		  Gravel, Dominique and Araújo, Miguel B.},
+@Article<span style=color:#8be9fd;font-style:italic>{</span>	  morales-castilla<span style=color:#8be9fd;font-style:italic>_</span>inferring<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>Inferring biotic interactions from proxies<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>30<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>01695347<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1016/j.tree.2015.03.014<span style=color:#8be9fd;font-style:italic>}</span>,
+  language	= <span style=color:#8be9fd;font-style:italic>{</span>en<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>6<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2018-05-23<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Trends in Ecology <span style=color:#ff79c6>\&amp;</span> Evolution<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Morales-Castilla, Ignacio and Matias, Miguel G. and
+		  Gravel, Dominique and Araújo, Miguel B.<span style=color:#8be9fd;font-style:italic>}</span>,
   month		= jun,
-  year		= {2015},
-  keywords	= {Interaction biotique},
-  pages		= {347--356}
-}
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  keywords	= <span style=color:#8be9fd;font-style:italic>{</span>Interaction biotique<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>347--356<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@Article{	  russell_scale_2006,
-  title		= {Scale, {Environment}, and {Trophic} {Status}: {The}
-		  {Context} {Dependency} of {Community} {Saturation} in
-		  {Rocky} {Intertidal} {Communities}},
-  volume	= {167},
-  issn		= {0003-0147, 1537-5323},
-  shorttitle	= {Scale, {Environment}, and {Trophic} {Status}},
-  url		= {http://www.journals.uchicago.edu/doi/10.1086/504603},
-  doi		= {10.1086/504603}
-}
+@Article<span style=color:#8be9fd;font-style:italic>{</span>	  russell<span style=color:#8be9fd;font-style:italic>_</span>scale<span style=color:#8be9fd;font-style:italic>_</span>2006,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>Scale, <span style=color:#8be9fd;font-style:italic>{</span>Environment<span style=color:#8be9fd;font-style:italic>}</span>, and <span style=color:#8be9fd;font-style:italic>{</span>Trophic<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Status<span style=color:#8be9fd;font-style:italic>}</span>: <span style=color:#8be9fd;font-style:italic>{</span>The<span style=color:#8be9fd;font-style:italic>}</span>
+		  <span style=color:#8be9fd;font-style:italic>{</span>Context<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Dependency<span style=color:#8be9fd;font-style:italic>}</span> of <span style=color:#8be9fd;font-style:italic>{</span>Community<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Saturation<span style=color:#8be9fd;font-style:italic>}</span> in
+		  <span style=color:#8be9fd;font-style:italic>{</span>Rocky<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Intertidal<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Communities<span style=color:#8be9fd;font-style:italic>}</span><span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>167<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>0003-0147, 1537-5323<span style=color:#8be9fd;font-style:italic>}</span>,
+  shorttitle	= <span style=color:#8be9fd;font-style:italic>{</span>Scale, <span style=color:#8be9fd;font-style:italic>{</span>Environment<span style=color:#8be9fd;font-style:italic>}</span>, and <span style=color:#8be9fd;font-style:italic>{</span>Trophic<span style=color:#8be9fd;font-style:italic>}</span> <span style=color:#8be9fd;font-style:italic>{</span>Status<span style=color:#8be9fd;font-style:italic>}</span><span style=color:#8be9fd;font-style:italic>}</span>,
+  url		= <span style=color:#8be9fd;font-style:italic>{</span>http://www.journals.uchicago.edu/doi/10.1086/504603<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1086/504603<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
 
-@Article{	  savage_elevational_2015,
-  title		= {Elevational shifts, biotic homogenization and time lags in
-		  vegetation change during 40 years of climate warming},
-  volume	= {38},
-  issn		= {09067590},
-  doi		= {10.1111/ecog.01131},
-  language	= {en},
-  number	= {6},
-  urldate	= {2019-04-14},
-  journal	= {Ecography},
-  author	= {Savage, Josée and Vellend, Mark},
+@Article<span style=color:#8be9fd;font-style:italic>{</span>	  savage<span style=color:#8be9fd;font-style:italic>_</span>elevational<span style=color:#8be9fd;font-style:italic>_</span>2015,
+  title		= <span style=color:#8be9fd;font-style:italic>{</span>Elevational shifts, biotic homogenization and time lags in
+		  vegetation change during 40 years of climate warming<span style=color:#8be9fd;font-style:italic>}</span>,
+  volume	= <span style=color:#8be9fd;font-style:italic>{</span>38<span style=color:#8be9fd;font-style:italic>}</span>,
+  issn		= <span style=color:#8be9fd;font-style:italic>{</span>09067590<span style=color:#8be9fd;font-style:italic>}</span>,
+  doi		= <span style=color:#8be9fd;font-style:italic>{</span>10.1111/ecog.01131<span style=color:#8be9fd;font-style:italic>}</span>,
+  language	= <span style=color:#8be9fd;font-style:italic>{</span>en<span style=color:#8be9fd;font-style:italic>}</span>,
+  number	= <span style=color:#8be9fd;font-style:italic>{</span>6<span style=color:#8be9fd;font-style:italic>}</span>,
+  urldate	= <span style=color:#8be9fd;font-style:italic>{</span>2019-04-14<span style=color:#8be9fd;font-style:italic>}</span>,
+  journal	= <span style=color:#8be9fd;font-style:italic>{</span>Ecography<span style=color:#8be9fd;font-style:italic>}</span>,
+  author	= <span style=color:#8be9fd;font-style:italic>{</span>Savage, Josée and Vellend, Mark<span style=color:#8be9fd;font-style:italic>}</span>,
   month		= jun,
-  year		= {2015},
-  pages		= {546--555}
-}
-</code></pre><p></details></p><p>Pretty neat, isn&rsquo;t it? Plus, if you are familiar with
+  year		= <span style=color:#8be9fd;font-style:italic>{</span>2015<span style=color:#8be9fd;font-style:italic>}</span>,
+  pages		= <span style=color:#8be9fd;font-style:italic>{</span>546--555<span style=color:#8be9fd;font-style:italic>}</span>
+<span style=color:#8be9fd;font-style:italic>}</span>
+</code></pre></td></tr></table></div></div></details><p>Pretty neat, isn't it? Plus, if you are familiar with
 <a href=https://www.gnu.org/software/make/manual/html_node/Introduction.html>Makefiles</a>,
 it is easy to add this to your compilation process so that each time your <code>bib</code>
 file is edited, the manuscript database will be edited will be updated 😃!

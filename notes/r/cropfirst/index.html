@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><title>KevCaz&#39;s Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.45a0fb410cb4c2fedb552955d561ef5c7e5c2073b49c6d888256c43144203c75.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz&#39;s Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
-<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks &amp; Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.179b77861f0b204d446615261de12ee0528df8baaea973b346ff1bf4a825d040.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
+<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
 <i class="fas fa-blog"></i>Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')">
 <i class="fas fa-person-booth"></i>Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>Clip, but crop first!</h1><h3 class=date>November 10, 2018<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
 <a href=../../../tags/r><kbd class=item-tag>R</kbd></a>
@@ -7,28 +7,49 @@
 <a href=../../../tags/raster><kbd class=item-tag>raster</kbd></a>
 <a href=../../../tags/gis><kbd class=item-tag>GIS</kbd></a></div><br></div><div class=article-main><p>I often clip raster in R, with <a href=https://cran.r-project.org/web/packages/sf/index.html>sf</a>
 and <a href=https://cran.r-project.org/web/packages/raster/index.html>raster</a> it
-is straightforward and efficient. That said, I&rsquo;d like to mention one tip
+is straightforward and efficient. That said, I'd like to mention one tip
 tip R users that clip should be aware of: cropping before clipping.
-It does significantly improve the performance, as shown in the R script below:</p><pre><code class=language-R>library(sf)
-library(raster)
-library(tidyverse)
+It does significantly improve the performance, as shown in the R script below:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>library</span>(sf)
+<span style=color:#50fa7b>library</span>(raster)
+<span style=color:#50fa7b>library</span>(tidyverse)
 
-## download Canada boundaries (level of the county)
-ont &lt;- getData(&quot;GADM&quot;, country = &quot;CAN&quot;, level = 2) %&gt;%
-  st_as_sf %&gt;% filter(NAME_1 == &quot;Ontario&quot;)
-## Download elevation raster (NB resolution is coarse)
-can_elv &lt;- getData(&quot;alt&quot;, country = &quot;CAN&quot;)
+<span style=color:#6272a4>## download Canada boundaries (level of the county)</span>
+ont <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>GADM&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>CAN&#34;</span>, level <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2</span>) <span style=color:#ff79c6>%&gt;%</span>
+  st_as_sf <span style=color:#ff79c6>%&gt;%</span> <span style=color:#50fa7b>filter</span>(NAME_1 <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>Ontario&#34;</span>)
+<span style=color:#6272a4>## Download elevation raster (NB resolution is coarse)</span>
+can_elv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>alt&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>CAN&#34;</span>)
 
 
-R&gt; system.time(
-+... ont_elv &lt;- rasterize(ont, can_elv, mask = TRUE)
-+... )
+R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>system.time</span>(
+<span style=color:#bd93f9>+.</span>.. ont_elv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>rasterize</span>(ont, can_elv, mask <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>)
+<span style=color:#bd93f9>+.</span>.. )
     user  system elapsed
-  69.938  87.836 157.786
-R&gt; system.time(
-+... ont_elv &lt;- rasterize(ont, crop(can_elv, ont), mask = TRUE)
-+... )
+  <span style=color:#bd93f9>69.938</span>  <span style=color:#bd93f9>87.836</span> <span style=color:#bd93f9>157.786</span>
+R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>system.time</span>(
+<span style=color:#bd93f9>+.</span>.. ont_elv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>rasterize</span>(ont, <span style=color:#50fa7b>crop</span>(can_elv, ont), mask <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>)
+<span style=color:#bd93f9>+.</span>.. )
    user  system elapsed
-  7.584   3.820  11.406
-</code></pre></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
+  <span style=color:#bd93f9>7.584</span>   <span style=color:#bd93f9>3.820</span>  <span style=color:#bd93f9>11.406</span>
+</code></pre></td></tr></table></div></div></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>

@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><title>KevCaz&#39;s Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.45a0fb410cb4c2fedb552955d561ef5c7e5c2073b49c6d888256c43144203c75.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz&#39;s Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
-<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks &amp; Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.179b77861f0b204d446615261de12ee0528df8baaea973b346ff1bf4a825d040.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
+<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
 <i class="fas fa-blog"></i>Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')">
 <i class="fas fa-person-booth"></i>Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>Combining Slurm and GNU parallel</h1><h3 class=date>November 11, 2019<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
 <a href=../../../tags/compute-canada><kbd class=item-tag>Compute Canada</kbd></a>
@@ -12,31 +12,46 @@ during lunch time) offered by Compute Canada dealing with
 Parallel</a> and how to combine them. This
 was a very useful and timely presentation for me (<a href="https://docs.google.com/presentation/d/1ysIaSWa157yiZ-ocX1jkAys1NkGgwolArSwCgAYCUPQ/edit?ts=5dc04169#slide=id.g65b5e056e3_0_5">🇫🇷 slides available online
 🔗</a>)
-as I&rsquo;ve just got started with Slurm (see my <a href=../../../notes/computesci/graham>previous notes on the
-topic</a>) and was eager to learn more.</p><p>Earlier today, I found an opportunity to put in practice what I&rsquo;ve learned last
+as I've just got started with Slurm (see my <a href=../../../notes/computesci/graham>previous notes on the
+topic</a>) and was eager to learn more.</p><p>Earlier today, I found an opportunity to put in practice what I've learned last
 week. Indeed I needed to download hundreds of shapefiles (2 different kind of
 shapefiles at 2 different for almost 120 years), extract values from them before
 deleting them. To do so, I wrote the following bash script to distribute the
-simulations on 5 nodes and use 4 CPUs per node:</p><pre><code class=language-sh>#!/bin/bash
-#SBATCH --time=6:00:00
-#SBATCH --nodes=5
-#SBATCH --array=1-5
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=4G
-#SBATCH --account=def-ksmccann
-#SBATCH --mail-user=kcazelle@uoguelph.ca
-#SBATCH --mail-type=FAIL
+simulations on 5 nodes and use 4 CPUs per node:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#ff79c6>#!/bin/bash
+</span><span style=color:#ff79c6></span><span style=color:#6272a4>#SBATCH --time=6:00:00</span>
+<span style=color:#6272a4>#SBATCH --nodes=5</span>
+<span style=color:#6272a4>#SBATCH --array=1-5</span>
+<span style=color:#6272a4>#SBATCH --ntasks-per-node=1</span>
+<span style=color:#6272a4>#SBATCH --cpus-per-task=4</span>
+<span style=color:#6272a4>#SBATCH --mem-per-cpu=4G</span>
+<span style=color:#6272a4>#SBATCH --account=def-ksmccann</span>
+<span style=color:#6272a4>#SBATCH --mail-user=kcazelle@uoguelph.ca</span>
+<span style=color:#6272a4>#SBATCH --mail-type=FAIL</span>
 
-# working directory is where the task is submitted
-cd $SLURM_SUBMIT_DIR
+<span style=color:#6272a4># working directory is where the task is submitted</span>
+<span style=color:#8be9fd;font-style:italic>cd</span> <span style=color:#8be9fd;font-style:italic>$SLURM_SUBMIT_DIR</span>
 
-parallel --delay 1 Rscript ./scr_extract.R $SLURM_ARRAY_TASK_ID {1} {2} ::: {1..2} ::: {1..2}
-</code></pre><p>The <code>#SBATCH</code> instructions do the following:</p><ul><li><code>#SBATCH --time=6:00:00</code>: allocate 6 hours for the job;</li><li><code>#SBATCH --nodes=5</code>: allocate 5 nodes;</li><li><code>#SBATCH --array=1-5</code>: generate 5 tasks with 1, 2, 3, 4 and 5 as identifiers (represented by <code>$SLURM_ARRAY_TASK_ID</code>);</li><li><code>#SBATCH --ntasks-per-node=1</code>: only one task per node;</li><li><code>#SBATCH --cpus-per-task=4</code>: allocate 4 CPUs per task;</li><li><code>#SBATCH --mem-per-cpu=4G</code>: allocate 4Gb of RAM per CPU.</li></ul><p>and in the main command:</p><pre><code>$ parallel --delay 1 Rscript ./scr_extract.R $SLURM_ARRAY_TASK_ID {1} {2} ::: {1..2} ::: {1..2}
+parallel --delay <span style=color:#bd93f9>1</span> Rscript ./scr_extract.R <span style=color:#8be9fd;font-style:italic>$SLURM_ARRAY_TASK_ID</span> <span style=color:#ff79c6>{</span>1<span style=color:#ff79c6>}</span> <span style=color:#ff79c6>{</span>2<span style=color:#ff79c6>}</span> ::: <span style=color:#ff79c6>{</span>1..2<span style=color:#ff79c6>}</span> ::: <span style=color:#ff79c6>{</span>1..2<span style=color:#ff79c6>}</span>
+</code></pre></td></tr></table></div></div><p>The <code>#SBATCH</code> instructions do the following:</p><ul><li><code>#SBATCH --time=6:00:00</code>: allocate 6 hours for the job;</li><li><code>#SBATCH --nodes=5</code>: allocate 5 nodes;</li><li><code>#SBATCH --array=1-5</code>: generate 5 tasks with 1, 2, 3, 4 and 5 as identifiers (represented by <code>$SLURM_ARRAY_TASK_ID</code>);</li><li><code>#SBATCH --ntasks-per-node=1</code>: only one task per node;</li><li><code>#SBATCH --cpus-per-task=4</code>: allocate 4 CPUs per task;</li><li><code>#SBATCH --mem-per-cpu=4G</code>: allocate 4Gb of RAM per CPU.</li></ul><p>and in the main command:</p><pre><code>$ parallel --delay 1 Rscript ./scr_extract.R $SLURM_ARRAY_TASK_ID {1} {2} ::: {1..2} ::: {1..2}
 </code></pre><p>the Rscript <code>scr_extract.R</code> takes 3 arguments:</p><ul><li>the first one are the task identifiers (<code>$SLURM_ARRAY_TASK_ID</code>) managed by
 Slurm and, given the setup I described above, this argument varies with the
-node!</li><li>the second and third arguments are handled by GNU parallel so that, on each node, it generates the same four combinations (i.e. (1,1), (1,2), (2,1), (2,2)), each of which is run by one of the four CPUs alloacated per node.</li></ul><p>⚠️ Note that if <code>SBATCH --ntasks-per-node=1</code> is used without specifying
+node!</li><li>the second and third arguments are handled by GNU parallel so that, on each node, it generates the same four combinations (i.e. (1,1), (1,2), (2,1), (2,2)), each of which is run by one of the four CPUs alloacated per node.</li></ul><p>⚠ Note that if <code>SBATCH --ntasks-per-node=1</code> is used without specifying
 the number of CPUs per task, only one CPU will be allocated, making <code>parallel</code>
-useless! That is why I added <code>#SBATCH --cpus-per-task=4</code> to have 4 instead of 1.</p><p>So, this set up allowed me to</p><ol><li>use five different nodes and to have a unique ID for those (<code>$SLURM_ARRAY_TASK_ID</code>);</li><li>do the same parallelization on each of them (with a different input).</li></ol><p>It turned out the only good reason for doing that was to apply what I&rsquo;ve learned
+useless! That is why I added <code>#SBATCH --cpus-per-task=4</code> to have 4 instead of 1.</p><p>So, this set up allowed me to</p><ol><li>use five different nodes and to have a unique ID for those (<code>$SLURM_ARRAY_TASK_ID</code>);</li><li>do the same parallelization on each of them (with a different input).</li></ol><p>It turned out the only good reason for doing that was to apply what I've learned
 a few days ago 😆😆😆!</p></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>

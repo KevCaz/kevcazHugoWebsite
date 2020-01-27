@@ -1,13 +1,41 @@
-<!doctype html><html lang=en-us><head><title>KevCaz&#39;s Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.45a0fb410cb4c2fedb552955d561ef5c7e5c2073b49c6d888256c43144203c75.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz&#39;s Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
-<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks &amp; Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.179b77861f0b204d446615261de12ee0528df8baaea973b346ff1bf4a825d040.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
+<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
 <i class="fas fa-blog"></i>Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')">
 <i class="fas fa-person-booth"></i>Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>GitHub actions, checkout and submodule</h1><h3 class=date>December 4, 2019<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
 <a href=../../../tags/continuous-integration><kbd class=item-tag>continuous integration</kbd></a>
 <a href=../../../tags/github><kbd class=item-tag>GitHub</kbd></a>
 <a href=../../../tags/github-actions><kbd class=item-tag>GitHub Actions</kbd></a>
 <a href=../../../tags/checkout><kbd class=item-tag>checkout</kbd></a>
-<a href=../../../tags/submodule><kbd class=item-tag>submodule</kbd></a></div><br></div><div class=article-main><p>I now use <a href=https://github.com/features/actions>GitHub Actions</a> to deploy this website (see my <a href=../githubactions>previous note about it</a>) and last Monday (two days ago 😃) after I pushed I got an email saying the deployment failed and found the following error message in the console log:</p><pre><code class=language-sh>##[error]The input 'submodules' is not supported in actions/checkout@v2
-</code></pre><p>Turns out this is because version 2 of <a href=https://github.com/actions/checkout>checkout</a> does not support submodule yet (see this issue report <a href=https://github.com/actions/checkout/issues/81>https://github.com/actions/checkout/issues/81</a>) which I use to install my <a href=https://github.com/KevCaz/hugo-KevCaz>Hugo Theme</a>. All I had to do was to use a previous version, so I replaced <code>uses: actions/checkout@master</code> by <code>uses: actions/checkout@v1.2.0</code> in my <a href=https://github.com/KevCaz/KevCaz.github.io><code>deploy.yaml</code></a> file:</p><pre><code class=language-yaml>name: github pages
+<a href=../../../tags/submodule><kbd class=item-tag>submodule</kbd></a></div><br></div><div class=article-main><p>I now use <a href=https://github.com/features/actions>GitHub Actions</a> to deploy this website (see my <a href=../githubactions>previous note about it</a>) and last Monday (two days ago 😃) after I pushed I got an email saying the deployment failed and found the following error message in the console log:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#6272a4>##[error]The input &#39;submodules&#39; is not supported in actions/checkout@v2</span>
+</code></pre></td></tr></table></div></div><p>Turns out this is because version 2 of <a href=https://github.com/actions/checkout>checkout</a> does not support submodule yet (see this issue report <a href=https://github.com/actions/checkout/issues/81>https://github.com/actions/checkout/issues/81</a>) which I use to install my <a href=https://github.com/KevCaz/hugo-KevCaz>Hugo Theme</a>. All I had to do was to use a previous version, so I replaced <code>uses: actions/checkout@master</code> by <code>uses: actions/checkout@v1.2.0</code> in my <a href=https://github.com/KevCaz/KevCaz.github.io><code>deploy.yaml</code></a> file:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>name: github pages
 
 on:
   push:
@@ -16,23 +44,23 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu<span style=color:#bd93f9>-18.04</span>
     steps:
-    - uses: actions/checkout@v1.2.0
+    - uses: actions/checkout@v1<span style=color:#bd93f9>.2</span><span style=color:#bd93f9>.0</span>
       with:
-        submodules: true
+        submodules: <span style=color:#ff79c6>true</span>
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.2.2
+      uses: peaceiris/actions-hugo@v2<span style=color:#bd93f9>.2</span><span style=color:#bd93f9>.2</span>
       with:
-        hugo-version: '0.57.2'
-        # extended: true
+        hugo-version: <span style=color:#f1fa8c>&#39;0.57.2&#39;</span>
+        <span style=color:#6272a4># extended: true</span>
     - name: Build website
       run: hugo --minify
     - name: Deploy website
-      uses: peaceiris/actions-gh-pages@v2.5.0
+      uses: peaceiris/actions-gh-pages@v2<span style=color:#bd93f9>.5</span><span style=color:#bd93f9>.0</span>
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: master
         PUBLISH_DIR: ./public
-</code></pre><p>Hope submodule soon will be supported soon in the new version!</p></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
+</code></pre></td></tr></table></div></div><p>Hope submodule soon will be supported soon in the new version!</p></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>

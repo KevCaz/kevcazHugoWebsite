@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><title>KevCaz&#39;s Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.45a0fb410cb4c2fedb552955d561ef5c7e5c2073b49c6d888256c43144203c75.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz&#39;s Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
-<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks &amp; Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.179b77861f0b204d446615261de12ee0528df8baaea973b346ff1bf4a825d040.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')">
+<i class="fas fa-microscope"></i>Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')">
 <i class="fas fa-blog"></i>Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')">
 <i class="fas fa-person-booth"></i>Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>Back to Thunderbird 52.9.1!</h1><h3 class=date>September 18, 2018<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
 <a href=../../../tags/debian><kbd class=item-tag>Debian</kbd></a>
@@ -7,33 +7,52 @@
 <a href=../../../tags/apt-get><kbd class=item-tag>apt-get</kbd></a>
 <a href=../../../tags/installation><kbd class=item-tag>installation</kbd></a></div><br></div><div class=article-main><p>Recently, Firefox 60 and <a href=https://www.thunderbird.net/en-US/>Thunderbird 60</a>
 were made available for Debian Testing and I installed them. While I was and
-still am happy with Firefox 60, when I tried Thunderbird I had some issues&hellip;
+still am happy with Firefox 60, when I tried Thunderbird I had some issues&mldr;
 Basically, I was not able to send a message and one of my favorite add-on,
 <a href=https://markdown-here.com/index.html>Markdown-Here</a>, was not available
 for this version 😢. So, I needed to get the previous version back.
 I searched for an answer and found <a href=https://askubuntu.com/questions/138284/how-to-downgrade-a-package-via-apt-get>this
 one</a>,
-very helpful! So I checked the version available using <code>apt-cache policy</code>:</p><pre><code class=language-sh>$ apt-cache policy thunderbird
+very helpful! So I checked the version available using <code>apt-cache policy</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ apt-cache policy thunderbird
 thunderbird:
  Installed: 1:60.0-3~deb9u1
  Candidate: 1:60.0-3~deb9u1
  Version table:
-*** 1:60.0-3~deb9u1 500
-       500 http://security.debian.org stable/updates/main amd64 Packages
-       100 /var/lib/dpkg/status
-    1:52.9.1-1 500
-       500 http://debian.mirror.rafal.ca/debian testing/main amd64 Packages
-    1:52.8.0-1~deb9u1 500
-       500 http://ftp.debian.org/debian stable/main amd64 Packages
-</code></pre><p><code>1:52.9.1-1 500</code> means version <code>1:52.9.1-1</code> is installable, and it was the one
+*** 1:60.0-3~deb9u1 <span style=color:#bd93f9>500</span>
+       <span style=color:#bd93f9>500</span> http://security.debian.org stable/updates/main amd64 Packages
+       <span style=color:#bd93f9>100</span> /var/lib/dpkg/status
+    1:52.9.1-1 <span style=color:#bd93f9>500</span>
+       <span style=color:#bd93f9>500</span> http://debian.mirror.rafal.ca/debian testing/main amd64 Packages
+    1:52.8.0-1~deb9u1 <span style=color:#bd93f9>500</span>
+       <span style=color:#bd93f9>500</span> http://ftp.debian.org/debian stable/main amd64 Packages
+</code></pre></td></tr></table></div></div><p><code>1:52.9.1-1 500</code> means version <code>1:52.9.1-1</code> is installable, and it was the one
 I was looking for to re-install Thunderbird (btw in <code>100 /var/lib/dpkg/status</code>
-<code>100</code> indicates the version installed):</p><pre><code class=language-sh>$ sudo apt-get install thunderbird=1:52.9.1-1  
-[...]
+<code>100</code> indicates the version installed):</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ sudo apt-get install <span style=color:#8be9fd;font-style:italic>thunderbird</span><span style=color:#ff79c6>=</span>1:52.9.1-1  
+<span style=color:#ff79c6>[</span>...<span style=color:#ff79c6>]</span>
 $ thunderbird -v                                
 Thunderbird 52.9.1
-</code></pre><p>YEAH🎆🎆! Plus, in order to prevent from re-installing version 60, I marked version 52:</p><pre><code class=language-sh>$ sudo apt-mark hold thunderbird     
-[sudo] password for kevcaz:
-thunderbird set on hold.
-</code></pre><p>I&rsquo;ll wait some weeks and the new version of Markdown Here that should <a href=https://github.com/adam-p/markdown-here/pull/520>come soon</a> before installing version
+</code></pre></td></tr></table></div></div><p>YEAH🎆🎆! Plus, in order to prevent from re-installing version 60, I marked version 52:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ sudo apt-mark hold thunderbird     
+<span style=color:#ff79c6>[</span>sudo<span style=color:#ff79c6>]</span> password <span style=color:#ff79c6>for</span> kevcaz:
+thunderbird <span style=color:#8be9fd;font-style:italic>set</span> on hold.
+</code></pre></td></tr></table></div></div><p>I'll wait some weeks and the new version of Markdown Here that should <a href=https://github.com/adam-p/markdown-here/pull/520>come soon</a> before installing version
 60 and its new features 😺.</p></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="fab fa-researchgate"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>
