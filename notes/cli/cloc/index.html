@@ -1,0 +1,186 @@
+<!doctype html><html lang=en-us><head><title>KevCaz's Website</title><link rel=stylesheet href=https://kevcaz.github.io/css/main.min.9760e964ca2d4937929abdf013ce4f57d7bb75e2d470e90da0fb48900539b71a.css media=screen><link rel=stylesheet href=../../../css/perso.css><link rel=stylesheet href=../../../css/family.css></head><body><div class=page><div class=ctn-sidebar-primary><div class=ctt-sidebar-primary><h1>KevCaz's Website</h1><div class=primary-sidebar-premenu><h2><i class="fas fa-align-center"></i><button onclick="dropDown('p-s-menu')"> Menu</button></h2></div><div class=primary-sidebar-menu id=p-s-menu><h2><a href=../../../><i class="fas fa-home"></i>Home</a></h2><h2><a href=../../../about/><i class="fas fa-id-card"></i>About</a></h2><h2><button onclick="dropDown('dropdown-research')"><i class="fas fa-microscope"></i> Research</button></h2><div class=dropdown id=dropdown-research><h3><a href=../../../projects/>Projects</a></h3><h3><a href=../../../publications/>Publications</a></h3><h3><a href=../../../software/>Software</a></h3><h3><a href=../../../talks/>Talks & Posters</a></h3><h3><a href=../../../teaching/>Teaching</a></h3><h3><a href=../../../resume/>Resume</a></h3></div><h2 id=current-dropdown><button onclick="dropDown('dropdown-blog')"><i class="fas fa-blog"></i> Blog</button></h2><div class=dropdown-current id=dropdown-blog><h3><a href=../../../econotes/>EcoNotes</a></h3><h3 id=current><a href=../../../notes/>SilicoNotes</a></h3><h3><a href=https://insileco.github.io/>inSileco</a></h3></div><h2><button onclick="dropDown('dropdown-perso')"><i class="fas fa-person-booth"></i> Personal stuff</button></h2><div class=dropdown id=dropdown-perso><h3><a href=../../../perso/books>Books I read and liked</a></h3><h3><a href=../../../perso/movies>Movies I watched and liked</a></h3><h3><a href=../../../perso/opinions>Opinions I dare to share</a></h3><h3><a href=../../../perso/famille>Even more personnal</a></h3></div></div><div class=footer><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="ai ai-researchgate-square"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div></div><div class=ctn-main-content><div class=ctt-main-content><div class=article-meta><h1 id=title>Count your lines of code with <code>cloc</code></h1><h3 class=date>February 9, 2020<div class=tags><i class="fas fa-tags" aria-hidden=true></i>&nbsp;
+<a href=../../../tags/cli><kbd class=item-tag>cli</kbd></a>
+<a href=../../../tags/code><kbd class=item-tag>code</kbd></a>
+<a href=../../../tags/r><kbd class=item-tag>R</kbd></a>
+<a href=../../../tags/count><kbd class=item-tag>count</kbd></a>
+<a href=../../../tags/line-of-code><kbd class=item-tag>line of code</kbd></a></div></div><div class=article-main><p>I recently found out about <a href=https://github.com/AlDanial/cloc>cloc</a> that is
+a very useful command line tool written in <a href=https://www.perl.org/>Perl</a>
+that &ldquo;<em>counts blank lines, comment lines, and physical lines of source code in
+many programming languages</em>"<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. Let's see how it works 👁.</p><p>The first step is to install <code>cloc</code>, there are several ways to do so, as a
+Debian user (Debian Buster) all I had to do was to use <code>apt-get</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ apt-get install cloc
+</code></pre></td></tr></table></div></div><p>Once installed, <code>cloc</code> can be call in a Terminal like so: <code>cloc path/to/file_or_folder</code>.
+Let's exemplify this. First, let's consider the following <i class="fab fa-r-project"></i>file:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#6272a4># one comment</span>
+<span style=color:#50fa7b>sum</span>(<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>)
+
+<span style=color:#6272a4># another line of code </span>
+<span style=color:#50fa7b>prod</span>(<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>3</span>) 
+</code></pre></td></tr></table></div></div><p>All I need to do to count the different type of lines is:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ cloc example.R 
+</code></pre></td></tr></table></div></div><p>which returns the following output</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>       <span style=color:#bd93f9>1</span> text file.
+       <span style=color:#bd93f9>1</span> unique file.                              
+       <span style=color:#bd93f9>0</span> files ignored.
+
+github.com/AlDanial/cloc v 1.81  <span style=color:#8be9fd;font-style:italic>T</span><span style=color:#ff79c6>=</span>0.00 s <span style=color:#ff79c6>(</span>258.3 files/s, 1291.3 lines/s<span style=color:#ff79c6>)</span>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+R                                <span style=color:#bd93f9>1</span>              <span style=color:#bd93f9>1</span>              <span style=color:#bd93f9>2</span>              <span style=color:#bd93f9>2</span>
+-------------------------------------------------------------------------------
+
+</code></pre></td></tr></table></div></div><p>Sweet 😄, right?! But even more interesting is that you can use <code>cloc</code> to obtain
+a summary of the lines of an entire folder! I do so for the
+content of the <i class="fab fa-r-project"></i>package <a href=https://cran.r-project.org/web/packages/rcites/index.html>rcites</a>
+I maintain:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ cloc .
+      <span style=color:#bd93f9>60</span> text files.
+      <span style=color:#bd93f9>57</span> unique files.                              
+      <span style=color:#bd93f9>18</span> files ignored.
+
+github.com/AlDanial/cloc v 1.81  <span style=color:#8be9fd;font-style:italic>T</span><span style=color:#ff79c6>=</span>0.04 s <span style=color:#ff79c6>(</span>1172.0 files/s, 160802.6 lines/s<span style=color:#ff79c6>)</span>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+HTML                             <span style=color:#bd93f9>7</span>            <span style=color:#bd93f9>213</span>             <span style=color:#bd93f9>22</span>           <span style=color:#bd93f9>2664</span>
+R                               <span style=color:#bd93f9>19</span>            <span style=color:#bd93f9>179</span>            <span style=color:#bd93f9>443</span>            <span style=color:#bd93f9>963</span>
+Markdown                         <span style=color:#bd93f9>8</span>            <span style=color:#bd93f9>141</span>              <span style=color:#bd93f9>0</span>            <span style=color:#bd93f9>262</span>
+JSON                             <span style=color:#bd93f9>1</span>              <span style=color:#bd93f9>0</span>              <span style=color:#bd93f9>0</span>            <span style=color:#bd93f9>239</span>
+Rmd                              <span style=color:#bd93f9>5</span>            <span style=color:#bd93f9>200</span>            <span style=color:#bd93f9>337</span>            <span style=color:#bd93f9>146</span>
+YAML                             <span style=color:#bd93f9>3</span>             <span style=color:#bd93f9>18</span>              <span style=color:#bd93f9>4</span>             <span style=color:#bd93f9>69</span>
+-------------------------------------------------------------------------------
+SUM:                            <span style=color:#bd93f9>43</span>            <span style=color:#bd93f9>751</span>            <span style=color:#bd93f9>806</span>           <span style=color:#bd93f9>4343</span>
+-------------------------------------------------------------------------------
+</code></pre></td></tr></table></div></div><p>Yeah ✨!!</p><p>Also, <i class="fab fa-r-project"></i>users would be happy to know that there
+is a package available on GitHub, written by <a href=https://github.com/hrbrmstr/cloc>Bob Rudis</a>,
+that wraps around the Perl script used in cloc and that returns the results as a data
+frame. So for instance, I can the same count for my rcites package with R:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> <span style=color:#6272a4># install.packages(&#34;remotes&#34;) # if needed</span>
+R<span style=color:#ff79c6>&gt;</span> remotes<span style=color:#ff79c6>::</span><span style=color:#50fa7b>install_github</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>hrbrmstr/cloc&#34;</span>) 
+R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>library</span>(cloc)
+R<span style=color:#ff79c6>&gt;</span> res <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>cloc_by_file</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>.&#34;</span>)  <span style=color:#6272a4># content of rcites                                                                                                  </span>
+   source                              filename language loc blank_lines comment_lines
+<span style=color:#bd93f9>1</span>       .                ./doc<span style=color:#ff79c6>/</span>get_started.html     HTML <span style=color:#bd93f9>639</span>          <span style=color:#bd93f9>31</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>2</span>       .                   ./doc<span style=color:#ff79c6>/</span>elephant.html     HTML <span style=color:#bd93f9>515</span>          <span style=color:#bd93f9>31</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>3</span>       .    ./docs<span style=color:#ff79c6>/</span>articles<span style=color:#ff79c6>/</span>a_get_started.html     HTML <span style=color:#bd93f9>477</span>          <span style=color:#bd93f9>26</span>             <span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>4</span>       .              ./doc<span style=color:#ff79c6>/</span>bulk_analysis.html     HTML <span style=color:#bd93f9>369</span>          <span style=color:#bd93f9>31</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>5</span>       .       ./docs<span style=color:#ff79c6>/</span>articles<span style=color:#ff79c6>/</span>b_elephant.html     HTML <span style=color:#bd93f9>348</span>          <span style=color:#bd93f9>26</span>             <span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>6</span>       .                             ./R<span style=color:#ff79c6>/</span>zzz.R        R <span style=color:#bd93f9>296</span>          <span style=color:#bd93f9>55</span>            <span style=color:#bd93f9>57</span>
+<span style=color:#bd93f9>7</span>       .                       ./codemeta.json     JSON <span style=color:#bd93f9>239</span>           <span style=color:#bd93f9>0</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>8</span>       .  ./docs<span style=color:#ff79c6>/</span>articles<span style=color:#ff79c6>/</span>c_bulk_analysis.html     HTML <span style=color:#bd93f9>204</span>          <span style=color:#bd93f9>26</span>             <span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>9</span>       .                       ./docs<span style=color:#ff79c6>/</span><span style=color:#bd93f9>404</span>.html     HTML <span style=color:#bd93f9>112</span>          <span style=color:#bd93f9>42</span>            <span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>10</span>      .                       ./R<span style=color:#ff79c6>/</span>print.spp.R        R  <span style=color:#bd93f9>85</span>          <span style=color:#bd93f9>27</span>            <span style=color:#bd93f9>43</span>
+<span style=color:#bd93f9>11</span>      .  ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>legislations.R        R  <span style=color:#bd93f9>84</span>          <span style=color:#bd93f9>12</span>            <span style=color:#bd93f9>15</span>
+<span style=color:#bd93f9>12</span>      .                ./R<span style=color:#ff79c6>/</span>spp_taxonconcept.R        R  <span style=color:#bd93f9>73</span>           <span style=color:#bd93f9>4</span>            <span style=color:#bd93f9>74</span>
+<span style=color:#bd93f9>13</span>      .                           ./README.md Markdown  <span style=color:#bd93f9>68</span>          <span style=color:#bd93f9>47</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>14</span>      .                             ./NEWS.md Markdown  <span style=color:#bd93f9>53</span>          <span style=color:#bd93f9>26</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>15</span>      .  ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>taxonconcept.R        R  <span style=color:#bd93f9>48</span>          <span style=color:#bd93f9>12</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>16</span>      . .<span style=color:#ff79c6>/</span>tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>distributions.R        R  <span style=color:#bd93f9>46</span>           <span style=color:#bd93f9>7</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>17</span>      .                            ./paper.md Markdown  <span style=color:#bd93f9>46</span>          <span style=color:#bd93f9>17</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>18</span>      .             ./.github<span style=color:#ff79c6>/</span>CONTRIBUTING.md Markdown  <span style=color:#bd93f9>44</span>          <span style=color:#bd93f9>29</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>19</span>      .           ./R<span style=color:#ff79c6>/</span>spp_cites_legislation.R        R  <span style=color:#bd93f9>42</span>           <span style=color:#bd93f9>1</span>            <span style=color:#bd93f9>50</span>
+<span style=color:#bd93f9>20</span>      .              ./R<span style=color:#ff79c6>/</span>spp_eu_legislation.R        R  <span style=color:#bd93f9>36</span>           <span style=color:#bd93f9>1</span>            <span style=color:#bd93f9>49</span>
+<span style=color:#bd93f9>21</span>      .    ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>pkghelpers.R        R  <span style=color:#bd93f9>35</span>           <span style=color:#bd93f9>9</span>             <span style=color:#bd93f9>4</span>
+<span style=color:#bd93f9>22</span>      .                    ./doc<span style=color:#ff79c6>/</span>elephant.Rmd      Rmd  <span style=color:#bd93f9>34</span>          <span style=color:#bd93f9>32</span>            <span style=color:#bd93f9>42</span>
+<span style=color:#bd93f9>23</span>      .            ./vignettes<span style=color:#ff79c6>/</span>b_elephant.Rmd      Rmd  <span style=color:#bd93f9>34</span>          <span style=color:#bd93f9>32</span>            <span style=color:#bd93f9>42</span>
+<span style=color:#bd93f9>24</span>      .               ./R<span style=color:#ff79c6>/</span>spp_distributions.R        R  <span style=color:#bd93f9>33</span>           <span style=color:#bd93f9>2</span>            <span style=color:#bd93f9>46</span>
+<span style=color:#bd93f9>25</span>      .                      ./doc<span style=color:#ff79c6>/</span>elephant.R        R  <span style=color:#bd93f9>32</span>           <span style=color:#bd93f9>9</span>             <span style=color:#bd93f9>9</span>
+<span style=color:#bd93f9>26</span>      .    ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>references.R        R  <span style=color:#bd93f9>32</span>           <span style=color:#bd93f9>5</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>27</span>      .                        ./appveyor.yml     YAML  <span style=color:#bd93f9>30</span>          <span style=color:#bd93f9>12</span>             <span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>28</span>      .                         ./.travis.yml     YAML  <span style=color:#bd93f9>30</span>           <span style=color:#bd93f9>5</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>29</span>      .                  ./R<span style=color:#ff79c6>/</span>spp_references.R        R  <span style=color:#bd93f9>30</span>           <span style=color:#bd93f9>2</span>            <span style=color:#bd93f9>41</span>
+<span style=color:#bd93f9>30</span>      .                 ./doc<span style=color:#ff79c6>/</span>get_started.Rmd      Rmd  <span style=color:#bd93f9>27</span>          <span style=color:#bd93f9>59</span>           <span style=color:#bd93f9>104</span>
+<span style=color:#bd93f9>31</span>      .         ./vignettes<span style=color:#ff79c6>/</span>a_get_started.Rmd      Rmd  <span style=color:#bd93f9>27</span>          <span style=color:#bd93f9>56</span>           <span style=color:#bd93f9>102</span>
+<span style=color:#bd93f9>32</span>      .                 ./doc<span style=color:#ff79c6>/</span>bulk_analysis.R        R  <span style=color:#bd93f9>24</span>          <span style=color:#bd93f9>10</span>            <span style=color:#bd93f9>12</span>
+<span style=color:#bd93f9>33</span>      .       ./vignettes<span style=color:#ff79c6>/</span>c_bulk_analysis.Rmd      Rmd  <span style=color:#bd93f9>24</span>          <span style=color:#bd93f9>21</span>            <span style=color:#bd93f9>47</span>
+<span style=color:#bd93f9>34</span>      .                   ./doc<span style=color:#ff79c6>/</span>get_started.R        R  <span style=color:#bd93f9>24</span>          <span style=color:#bd93f9>15</span>            <span style=color:#bd93f9>18</span>
+<span style=color:#bd93f9>35</span>      .                          ./CONDUCT.md Markdown  <span style=color:#bd93f9>19</span>           <span style=color:#bd93f9>6</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>36</span>      .    ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>wrongtoken.R        R  <span style=color:#bd93f9>16</span>           <span style=color:#bd93f9>4</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>37</span>      .                       ./R<span style=color:#ff79c6>/</span>set_token.R        R  <span style=color:#bd93f9>12</span>           <span style=color:#bd93f9>2</span>            <span style=color:#bd93f9>23</span>
+<span style=color:#bd93f9>38</span>      .    ./.github<span style=color:#ff79c6>/</span>pull_request_template.md Markdown  <span style=color:#bd93f9>12</span>           <span style=color:#bd93f9>4</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>39</span>      .      ./tests<span style=color:#ff79c6>/</span>testthat<span style=color:#ff79c6>/</span>helper<span style=color:#ff79c6>-</span>citesr.R        R  <span style=color:#bd93f9>12</span>           <span style=color:#bd93f9>2</span>             <span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>40</span>      .                    ./cran<span style=color:#ff79c6>-</span>comments.md Markdown  <span style=color:#bd93f9>11</span>           <span style=color:#bd93f9>9</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>41</span>      .           ./.github<span style=color:#ff79c6>/</span>issue_template.md Markdown   <span style=color:#bd93f9>9</span>           <span style=color:#bd93f9>3</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>42</span>      .                        ./_pkgdown.yml     YAML   <span style=color:#bd93f9>9</span>           <span style=color:#bd93f9>1</span>             <span style=color:#bd93f9>0</span>
+<span style=color:#bd93f9>43</span>      .                    ./tests<span style=color:#ff79c6>/</span>test<span style=color:#ff79c6>-</span>all.R        R   <span style=color:#bd93f9>3</span>           <span style=color:#bd93f9>0</span>             <span style=color:#bd93f9>0</span>
+</code></pre></td></tr></table></div></div><p>🎆 Hope this could be useful!</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>see the <a href=https://github.com/AlDanial/cloc>https://github.com/AlDanial/cloc</a> <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="ai ai-researchgate-square"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
+function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>
