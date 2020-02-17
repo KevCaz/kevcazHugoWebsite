@@ -1,9 +1,6 @@
 // https://www.w3schools.com/howto/howto_js_dropdown.asp
-function dropDown(x) {
-    var x = document.getElementById(x)
-    if (x.style.display == "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+// https://stackoverflow.com/questions/11212470/double-click-to-show-an-div
+function dropDown(id) {
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display == 'none' || el.style.display == '') ? 'block' : 'none';
   }
