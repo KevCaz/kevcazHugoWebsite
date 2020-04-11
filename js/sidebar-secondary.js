@@ -1,4 +1,4 @@
-var x = document.querySelectorAll(".ctt-main-content .article-main h1, .ctt-main-content .article-main h2");
+var x = document.querySelectorAll(".ctt-main-content .article-main h1, .ctt-main-content .article-main h2, .addto-second-navbar");
 var i;
 
 for (i = 0; i < x.length; i++) {
