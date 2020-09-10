@@ -35,11 +35,11 @@ $ rename <span style=color:#f1fa8c>&#39;s/old1/new2/&#39;</span> /path/to/folder
 </code></pre></td></tr></table></div></div><p>For more examples, see this post/tutorial on
 <a href=https://www.computerhope.com/unix/rename.htm>computerhope</a>.</p><h2 id=using-r-to-solve-problem-2>Using R to solve <strong>problem 2</strong></h2><p>Below, I use <i class="fab fa-r-project"></i>to solve <strong>problem 2</strong>. I would
 like to stress that I am using <i class="fab fa-r-project"></i>simply because I
-am more more confortable doing this manipulation with R. Obviously there are
+am more confortable doing this manipulation with R. Obviously there are
 ways of accomplishing this with many programming language and I believe that
 this is totally doable with <code>rename</code>. That being said, this is also a good
 opportunity to exemplify how to use <i class="fab fa-r-project"></i>can to
-rename files.</p><p>First, let's list the file in <code>/path/to/folder1/</code></p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+rename files.</p><p>First, let's list the in <code>/path/to/folder1/</code></p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
@@ -57,7 +57,8 @@ R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>head</span>(fls
 [6] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_006.txt&#34;</span>
 </code></pre></td></tr></table></div></div><p>Note that I purposely changed the original long path to <code>/path/to/folder1/</code> for
 the sake of clarity. So now what I am looking for is to rename
-<code>res_simu1_01.txt</code> to <code>res_simu1_21.txt</code>, <code>res_simu1_02.txt' to</code>res_simu1_22.txt` and so forth. To do so, I need to extract the number add 20
+<code>res_simu1_01.txt</code> to <code>res_simu1_21.txt</code>, <code>res_simu1_02.txt</code> to
+<code>res_simu1_22.txt</code> and so forth. To do so, I need to extract the number add 20
 and then rename the file, and I wrote the following function that does the job!</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
@@ -80,10 +81,10 @@ R<span style=color:#ff79c6>&gt;</span> }
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>lapply</span>(fls, myrename, <span style=color:#bd93f9>20</span>)
 </code></pre></td></tr></table></div></div><p>And I can actually add any number, including negative ones. That said, with this
 solution it may be important to ensure that numbers obtained after addition
-remain within [0; 1000], otherwise you may not obtained what you were looking
+remain within [0; 1000], otherwise you may not obtain what you were looking
 for. Even more important, you should check whether new files names are existing
 file name, cause this could be quite problematic. For instance, in the example
-above, if I were to use <code>lapply(fls, myrename, 20)</code>, then <code>res_simu1_01.txt</code>
+above, if I were to use <code>lapply(fls, myrename, 5)</code>, then <code>res_simu1_01.txt</code>
 would be renamed <code>res_simu1_06.txt</code> and as <code>res_simu1_01.txt</code> is the first file
 to be renamed, <code>res_simu1_06.txt</code> would be overwritten. One way to avoid this is
 to change the order in which files are handled, e.g.</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
@@ -91,8 +92,8 @@ to change the order in which files are handled, e.g.</p><div class=highlight><di
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>lapply</span>(fls[6<span style=color:#ff79c6>:</span><span style=color:#bd93f9>10</span>], myrename, <span style=color:#bd93f9>5</span>)
 R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>lapply</span>(fls[1<span style=color:#ff79c6>:</span><span style=color:#bd93f9>5</span>], myrename, <span style=color:#bd93f9>5</span>)
 </code></pre></td></tr></table></div></div><p>Here, <code>myrename()</code> was designed specifically to solve <strong>problem 2</strong> but it
-would be relatively easy to make it more general, that is writting a few extra
+would be relatively easy to make it more general, that is writing a few extra
 lines to handle a wider range of patterns and to check for potential problems
-while renaming (e.g. the one we just described).</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>There are several comprehensive tutorials available on line that
+while renaming (e.g. the one I just described).</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>There are several comprehensive tutorials available on line that
 illustrate how to use the <code>mv</code> command, for instance <a href=https://linuxize.com/post/how-to-rename-files-in-linux/>this one on Linuxize</a>. <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://stackoverflow.com/users/8038778><i class="fab fa-stack-overflow"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="ai ai-researchgate-square"></i></a><a href=https://kevcaz.github.io/index.xml><i class="fas fa-rss-square"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>
