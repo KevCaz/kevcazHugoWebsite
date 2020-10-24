@@ -4,7 +4,7 @@
 <a href=../../../tags/ssconvert><kbd class=item-tag>ssconvert</kbd></a></div></div><div class=article-main><p>Even if I use <a href=https://www.libreoffice.org/discover/calc/>Calc</a> more
 often than <a href=http://www.gnumeric.org/>Gnumeric</a> (and actually I tried to
 spend as less time as possible on spreadsheet programs), the latter
-provides a tool I'm fond of,
+provides a tool I&rsquo;m fond of,
 <a href=http://manpages.ubuntu.com/manpages/bionic/man1/ssconvert.1.html>ssconvert</a>:</p><blockquote><p>ssconvert - a command line spreadsheet format converter</p></blockquote><p>It offers a very efficient way to convert <code>.xlsx</code> into <code>.csv</code>,
 for instance:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
@@ -15,7 +15,7 @@ ssconvert -S spreadsheet.xlsx csvFiles/%s.csv
 The output filename is treated as a template in which sheet number is substituted
 for %n and/or sheet name is substituted for %s. If there are not substitutions, a
 default of &ldquo;.%s&rdquo; is added. (see <code>man ssconvert</code>)</p></blockquote><p>So, basically, assuming there are two sheets &lsquo;sheet1&rsquo; and &lsquo;sheet2&rsquo; in
-my file <code>spreadsheet.xlsx</code>, then I'll get <code>sheet1.csv</code> and <code>sheet2.csv</code> in my folder
+my file <code>spreadsheet.xlsx</code>, then I&rsquo;ll get <code>sheet1.csv</code> and <code>sheet2.csv</code> in my folder
 &lsquo;csvFiles&rsquo; 🎆.</p><p>I find <code>ssconvert</code> extremely helpful in my workflow as several colleagues of
 mine work with spreadsheet programs as a database management software 😐:
 I use <code>ssconvert</code> as the first step of my analysis pipeline so that I never

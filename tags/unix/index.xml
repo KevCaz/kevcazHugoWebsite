@@ -5,4 +5,4 @@
 1 unzip &amp;#39;path/*.zip&amp;#39; works like a charm!
 Thanks Chris!</description></item><item><title>How to count non-blank lines of a set of files?</title><link>https://kevcaz.github.io/notes/linux/countlines/</link><pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate><guid>https://kevcaz.github.io/notes/linux/countlines/</guid><description>Yesterday, I was trying to find a way to count lines of a set of R files without comments nor empty lines and found this answer on stackoverflow:
 1 cat R/* | sed &amp;#39;/^\s*#/d;/^\s*$/d&amp;#39; | wc -l Exactly what I needed! A few explanations are in order:
-cat reads files sequentially; &amp;ldquo;|&amp;rdquo; is the the pipe operator; sed parses and transforms text; wc counts words, lines and more!</description></item></channel></rss>
+cat reads files sequentially; &amp;quot;|&amp;quot; is the the pipe operator; sed parses and transforms text; wc counts words, lines and more!</description></item></channel></rss>

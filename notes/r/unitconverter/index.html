@@ -18,7 +18,7 @@ I figured out how to create a simple but robust unit converter with one line of
 code, and so I did:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r>R<span style=color:#ff79c6>&gt;</span> conv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>function</span>(x, from <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>fahrenheit&#34;</span>, to <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>celsius&#34;</span>) {
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r>R<span style=color:#ff79c6>&gt;</span> conv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>function</span>(x, from <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;fahrenheit&#34;</span>, to <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;celsius&#34;</span>) {
       units<span style=color:#ff79c6>::</span><span style=color:#50fa7b>as_units</span>(<span style=color:#bd93f9>0</span>, to) <span style=color:#ff79c6>+</span> units<span style=color:#ff79c6>::</span><span style=color:#50fa7b>as_units</span>(<span style=color:#50fa7b>as.numeric</span>(x), from)
     }
 </code></pre></td></tr></table></div></div><p>I appended this function to my <code>.Rprofile</code> and now, it is available when I work with R. Here are a couple of examples:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
@@ -34,10 +34,10 @@ code, and so I did:</p><div class=highlight><div style=color:#f8f8f2;background-
 R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<span style=color:#bd93f9>350</span>)
 <span style=color:#bd93f9>176.6667</span> [°C]
 <span style=color:#6272a4># Day =&gt; second</span>
-R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<span style=color:#bd93f9>1.5</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>d&#34;</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>s&#34;</span>)
+R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<span style=color:#bd93f9>1.5</span>, <span style=color:#f1fa8c>&#34;d&#34;</span>, <span style=color:#f1fa8c>&#34;s&#34;</span>)
 <span style=color:#bd93f9>129600</span> [s]
 <span style=color:#6272a4># calorie =&gt; Joule</span>
-R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>cal&#34;</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>J&#34;</span>)
+R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;cal&#34;</span>, <span style=color:#f1fa8c>&#34;J&#34;</span>)
 <span style=color:#bd93f9>4.1868</span> [J]
 </code></pre></td></tr></table></div></div><p>I also created a shell function calling the R function above, so that I quickly convert units in a Terminal!</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
@@ -47,9 +47,9 @@ R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>conv</span>(<sp
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=color:#6272a4># shell function</span>
 <span style=color:#50fa7b>convR</span>() {
-  FROM<span style=color:#ff79c6>=</span><span style=color:#ff79c6>$</span>{<span style=color:#bd93f9>2</span><span style=color:#ff79c6>:</span><span style=color:#ff79c6>-</span>fahrenheit}
-  TO<span style=color:#ff79c6>=</span><span style=color:#ff79c6>$</span>{<span style=color:#bd93f9>3</span><span style=color:#ff79c6>:</span><span style=color:#ff79c6>-</span>celsius}
-  Rscript <span style=color:#ff79c6>-</span>e <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>conv(&#39;$1&#39;, &#39;$FROM&#39;, &#39;$TO&#39;)&#34;</span>
+  FROM<span style=color:#ff79c6>=$</span>{<span style=color:#bd93f9>2</span><span style=color:#ff79c6>:-</span>fahrenheit}
+  TO<span style=color:#ff79c6>=$</span>{<span style=color:#bd93f9>3</span><span style=color:#ff79c6>:-</span>celsius}
+  Rscript <span style=color:#ff79c6>-</span>e <span style=color:#f1fa8c>&#34;conv(&#39;$1&#39;, &#39;$FROM&#39;, &#39;$TO&#39;)&#34;</span>
 }
 </code></pre></td></tr></table></div></div><p>For instance:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2

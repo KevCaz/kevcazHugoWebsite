@@ -39,7 +39,7 @@ am more confortable doing this manipulation with R. Obviously there are
 ways of accomplishing this with many programming language and I believe that
 this is totally doable with <code>rename</code>. That being said, this is also a good
 opportunity to exemplify how to use <i class="fab fa-r-project"></i>can to
-rename files.</p><p>First, let's list the in <code>/path/to/folder1/</code></p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+rename files.</p><p>First, let&rsquo;s list the in <code>/path/to/folder1/</code></p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
@@ -47,14 +47,14 @@ rename files.</p><p>First, let's list the in <code>/path/to/folder1/</code></p><
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> fls <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>list.files</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/&#34;</span>, recursive <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>, full.names <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>)
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> fls <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>list.files</span>(<span style=color:#f1fa8c>&#34;/path/to/folder1/&#34;</span>, recursive <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>, full.names <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>TRUE</span>)
 R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>head</span>(fls)
-[1] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_001.txt&#34;</span>
-[2] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_002.txt&#34;</span>
-[3] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_003.txt&#34;</span>
-[4] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_004.txt&#34;</span>
-[5] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_005.txt&#34;</span>
-[6] <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>/path/to/folder1/res_simu1_006.txt&#34;</span>
+[1] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_001.txt&#34;</span>
+[2] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_002.txt&#34;</span>
+[3] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_003.txt&#34;</span>
+[4] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_004.txt&#34;</span>
+[5] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_005.txt&#34;</span>
+[6] <span style=color:#f1fa8c>&#34;/path/to/folder1/res_simu1_006.txt&#34;</span>
 </code></pre></td></tr></table></div></div><p>Note that I purposely changed the original long path to <code>/path/to/folder1/</code> for
 the sake of clarity. So now what I am looking for is to rename
 <code>res_simu1_01.txt</code> to <code>res_simu1_21.txt</code>, <code>res_simu1_02.txt</code> to
@@ -71,11 +71,11 @@ and then rename the file, and I wrote the following function that does the job!<
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> myrename <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>function</span>(x, offset) {
 R<span style=color:#ff79c6>&gt;</span>   <span style=color:#6272a4># this is one way to extract the number identifying </span>
 R<span style=color:#ff79c6>&gt;</span>   <span style=color:#6272a4># this would work even if there are numbers in the name of your files</span>
-R<span style=color:#ff79c6>&gt;</span>   val <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>sub</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>^.*_([0-9]{3})\\.txt$&#34;</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\\1&#34;</span>, x)
+R<span style=color:#ff79c6>&gt;</span>   val <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>sub</span>(<span style=color:#f1fa8c>&#34;^.*_([0-9]{3})\\.txt$&#34;</span>, <span style=color:#f1fa8c>&#34;\\1&#34;</span>, x)
 R<span style=color:#ff79c6>&gt;</span>   <span style=color:#6272a4># add 20 and get a character string correclty formatted</span>
-R<span style=color:#ff79c6>&gt;</span>   rep <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>sprintf</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>%03d&#34;</span>, <span style=color:#50fa7b>as.numeric</span>(val) <span style=color:#ff79c6>+</span> offset)
+R<span style=color:#ff79c6>&gt;</span>   rep <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>sprintf</span>(<span style=color:#f1fa8c>&#34;%03d&#34;</span>, <span style=color:#50fa7b>as.numeric</span>(val) <span style=color:#ff79c6>+</span> offset)
 R<span style=color:#ff79c6>&gt;</span>   <span style=color:#6272a4># rename files</span>
-R<span style=color:#ff79c6>&gt;</span>   <span style=color:#50fa7b>file.rename</span>(x, <span style=color:#50fa7b>sub</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>[0-9]{3}&#34;</span>, rep, x))
+R<span style=color:#ff79c6>&gt;</span>   <span style=color:#50fa7b>file.rename</span>(x, <span style=color:#50fa7b>sub</span>(<span style=color:#f1fa8c>&#34;[0-9]{3}&#34;</span>, rep, x))
 R<span style=color:#ff79c6>&gt;</span> }
 </code></pre></td></tr></table></div></div><p>where <code>x</code> is a file name and <code>offset</code> allows one to chose the number to be added. So, in order to solve <strong>problem 2</strong>, I can use <code>apply()</code> as follows :</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>lapply</span>(fls, myrename, <span style=color:#bd93f9>20</span>)

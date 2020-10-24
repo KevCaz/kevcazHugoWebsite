@@ -36,13 +36,13 @@ pages, so I created <code>number.pdf</code> with 15 pages) and then I used the
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-makefile data-lang=makefile><span style=color:#6272a4># combine all pdf documents I needed: the
-</span><span style=color:#6272a4></span><span style=color:#8be9fd;font-style:italic>pdfs</span> <span style=color:#ff79c6>:=</span> <span style=color:#ff79c6>$(</span>patsubst %.md, %.pdf, <span style=color:#ff79c6>$(</span>wildcard *.md extra.pdf<span style=color:#ff79c6>)</span><span style=color:#ff79c6>)</span>
+</span><span style=color:#6272a4></span><span style=color:#8be9fd;font-style:italic>pdfs</span> <span style=color:#ff79c6>:=</span> <span style=color:#ff79c6>$(</span>patsubst %.md, %.pdf, <span style=color:#ff79c6>$(</span>wildcard *.md extra.pdf<span style=color:#ff79c6>))</span>
 <span style=color:#8be9fd;font-style:italic>target</span> <span style=color:#ff79c6>=</span> final.pdf
 
 <span style=color:#50fa7b>ALL</span><span style=color:#ff79c6>:</span> <span style=color:#ff79c6>$(</span><span style=color:#8be9fd;font-style:italic>target</span><span style=color:#ff79c6>)</span>
 
 <span style=color:#50fa7b>$(target)</span><span style=color:#ff79c6>:</span> <span style=color:#ff79c6>$(</span><span style=color:#8be9fd;font-style:italic>pdfs</span><span style=color:#ff79c6>)</span>
-	pdftk <span style=color:#ff79c6>$(</span>sort <span style=color:#ff79c6>$(</span>pdfs<span style=color:#ff79c6>)</span><span style=color:#ff79c6>)</span> cat output tmp.pdf <span style=color:#6272a4># sort and combine pdf</span>
+	pdftk <span style=color:#ff79c6>$(</span>sort <span style=color:#ff79c6>$(</span>pdfs<span style=color:#ff79c6>))</span> cat output tmp.pdf <span style=color:#6272a4># sort and combine pdf</span>
 	pdftk tmp.pdf multibackground numbers.pdf output <span style=color:#ff79c6>$(</span>target<span style=color:#ff79c6>)</span> <span style=color:#6272a4># create final pdf</span>
 	rm tmp.pdf <span style=color:#6272a4># remove the temporary file</span>
 

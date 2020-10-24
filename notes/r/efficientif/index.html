@@ -4,7 +4,7 @@
 <a href=../../../tags/efficiency><kbd class=item-tag>efficiency</kbd></a></div></div><div class=article-main><p>Recently, I was looking at an R function and found a if statement that looks something like this:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>length</span>(<span style=color:#50fa7b>which</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span>)) <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>0</span>) {
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>length</span>(<span style=color:#50fa7b>which</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;entry&#34;</span>)) <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>0</span>) {
   <span style=color:#6272a4># [...]</span>
 }
 </code></pre></td></tr></table></div></div><p>I guess this is common way of doing it as it matches well with a way of looking
@@ -12,13 +12,13 @@ at the problem: &ldquo;if I want to test the presence of a column &ldquo;entry&r
 (<code>df</code>), I can check if there is more at least one name that match &ldquo;entry&rdquo;.</p><p>Another way, a shorter one, is to use the operator <code>%in%</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span> <span style=color:#ff79c6>%in%</span> <span style=color:#50fa7b>names</span>(df)) {
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#f1fa8c>&#34;entry&#34;</span> <span style=color:#ff79c6>%in%</span> <span style=color:#50fa7b>names</span>(df)) {
   <span style=color:#6272a4># [...]</span>
 }
 </code></pre></td></tr></table></div></div><p>I personally would have written:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>sum</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span>)) {
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R><span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>sum</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;entry&#34;</span>)) {
   <span style=color:#6272a4># [...]</span>
 }
 </code></pre></td></tr></table></div></div><p>It is less intuitive: basically <code>sum(names(df) == "entry")</code> will
@@ -55,14 +55,14 @@ options I wrote a small R script:</p><div class=highlight><div style=color:#f8f8
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>df <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>data.frame</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry2&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry3&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>)
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-R data-lang=R>df <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>data.frame</span>(<span style=color:#f1fa8c>&#34;entry&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;entry2&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>, <span style=color:#f1fa8c>&#34;entry3&#34;</span> <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>)
 nrep <span style=color:#ff79c6>&lt;-</span> <span style=color:#bd93f9>5000000</span>
 
 <span style=color:#6272a4># option 1</span>
 <span style=color:#50fa7b>system.time</span>(
 <span style=color:#50fa7b>for </span>(i in <span style=color:#50fa7b>seq_len</span>(nrep)) {
-  <span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>length</span>(<span style=color:#50fa7b>which</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span>)) <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>0</span>) {
-    <span style=color:#bd93f9>1</span><span style=color:#bd93f9>+1</span><span style=color:#bd93f9>+1</span>
+  <span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>length</span>(<span style=color:#50fa7b>which</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;entry&#34;</span>)) <span style=color:#ff79c6>&gt;</span> <span style=color:#bd93f9>0</span>) {
+    <span style=color:#bd93f9>1+1+1</span>
   }
 }
 )
@@ -70,8 +70,8 @@ nrep <span style=color:#ff79c6>&lt;-</span> <span style=color:#bd93f9>5000000</s
 <span style=color:#6272a4># option 2</span>
 <span style=color:#50fa7b>system.time</span>(
 <span style=color:#50fa7b>for </span>(i in <span style=color:#50fa7b>seq_len</span>(nrep)) {
-  <span style=color:#50fa7b>if </span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span> <span style=color:#ff79c6>%in%</span> <span style=color:#50fa7b>names</span>(df))  {
-    <span style=color:#bd93f9>1</span><span style=color:#bd93f9>+1</span><span style=color:#bd93f9>+1</span>
+  <span style=color:#50fa7b>if </span>(<span style=color:#f1fa8c>&#34;entry&#34;</span> <span style=color:#ff79c6>%in%</span> <span style=color:#50fa7b>names</span>(df))  {
+    <span style=color:#bd93f9>1+1+1</span>
   }
 }
 )
@@ -79,8 +79,8 @@ nrep <span style=color:#ff79c6>&lt;-</span> <span style=color:#bd93f9>5000000</s
 <span style=color:#6272a4># option 3</span>
 <span style=color:#50fa7b>system.time</span>(
 <span style=color:#50fa7b>for </span>(i in <span style=color:#50fa7b>seq_len</span>(nrep)) {
-  <span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>sum</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>entry&#34;</span>))  {
-    <span style=color:#bd93f9>1</span><span style=color:#bd93f9>+1</span><span style=color:#bd93f9>+1</span>
+  <span style=color:#50fa7b>if </span>(<span style=color:#50fa7b>sum</span>(<span style=color:#50fa7b>names</span>(df) <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;entry&#34;</span>))  {
+    <span style=color:#bd93f9>1+1+1</span>
   }
 }
 )

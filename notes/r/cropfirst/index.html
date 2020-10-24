@@ -4,7 +4,7 @@
 <a href=../../../tags/raster><kbd class=item-tag>raster</kbd></a>
 <a href=../../../tags/gis><kbd class=item-tag>GIS</kbd></a></div></div><div class=article-main><p>I often clip raster in R, with <a href=https://cran.r-project.org/web/packages/sf/index.html>sf</a>
 and <a href=https://cran.r-project.org/web/packages/raster/index.html>raster</a> it
-is straightforward and efficient. That said, I'd like to mention one tip
+is straightforward and efficient. That said, I&rsquo;d like to mention one tip
 tip R users that clip should be aware of: cropping before clipping.
 It does significantly improve the performance, as shown in the R script below:</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
@@ -32,10 +32,10 @@ It does significantly improve the performance, as shown in the R script below:</
 <span style=color:#50fa7b>library</span>(tidyverse)
 
 <span style=color:#6272a4>## download Canada boundaries (level of the county)</span>
-ont <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>GADM&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>CAN&#34;</span>, level <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2</span>) <span style=color:#ff79c6>%&gt;%</span>
-  st_as_sf <span style=color:#ff79c6>%&gt;%</span> <span style=color:#50fa7b>filter</span>(NAME_1 <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>Ontario&#34;</span>)
+ont <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;GADM&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;CAN&#34;</span>, level <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>2</span>) <span style=color:#ff79c6>%&gt;%</span>
+  st_as_sf <span style=color:#ff79c6>%&gt;%</span> <span style=color:#50fa7b>filter</span>(NAME_1 <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;Ontario&#34;</span>)
 <span style=color:#6272a4>## Download elevation raster (NB resolution is coarse)</span>
-can_elv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>alt&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>CAN&#34;</span>)
+can_elv <span style=color:#ff79c6>&lt;-</span> <span style=color:#50fa7b>getData</span>(<span style=color:#f1fa8c>&#34;alt&#34;</span>, country <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;CAN&#34;</span>)
 
 
 R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>system.time</span>(

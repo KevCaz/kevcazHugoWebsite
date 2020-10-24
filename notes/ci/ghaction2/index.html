@@ -32,32 +32,32 @@
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>name: github pages
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>name</span>: github pages
 
-on:
-  push:
-    branches:
+<span style=color:#ff79c6>on</span>:
+  <span style=color:#ff79c6>push</span>:
+    <span style=color:#ff79c6>branches</span>:
     - dev
 
-jobs:
-  build-deploy:
-    runs-on: ubuntu<span style=color:#bd93f9>-18.04</span>
-    steps:
-    - uses: actions/checkout@v1<span style=color:#bd93f9>.2</span><span style=color:#bd93f9>.0</span>
-      with:
-        submodules: <span style=color:#ff79c6>true</span>
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2<span style=color:#bd93f9>.2</span><span style=color:#bd93f9>.2</span>
-      with:
-        hugo-version: <span style=color:#f1fa8c>&#39;0.57.2&#39;</span>
+<span style=color:#ff79c6>jobs</span>:
+  <span style=color:#ff79c6>build-deploy</span>:
+    <span style=color:#ff79c6>runs-on</span>: ubuntu-18.04
+    <span style=color:#ff79c6>steps</span>:
+    - <span style=color:#ff79c6>uses</span>: actions/checkout@v1.2.0
+      <span style=color:#ff79c6>with</span>:
+        <span style=color:#ff79c6>submodules</span>: <span style=color:#ff79c6>true</span>
+    - <span style=color:#ff79c6>name</span>: Setup Hugo
+      <span style=color:#ff79c6>uses</span>: peaceiris/actions-hugo@v2.2.2
+      <span style=color:#ff79c6>with</span>:
+        <span style=color:#ff79c6>hugo-version</span>: <span style=color:#f1fa8c>&#39;0.57.2&#39;</span>
         <span style=color:#6272a4># extended: true</span>
-    - name: Build website
-      run: hugo --minify
-    - name: Deploy website
-      uses: peaceiris/actions-gh-pages@v2<span style=color:#bd93f9>.5</span><span style=color:#bd93f9>.0</span>
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./public
+    - <span style=color:#ff79c6>name</span>: Build website
+      <span style=color:#ff79c6>run</span>: hugo --minify
+    - <span style=color:#ff79c6>name</span>: Deploy website
+      <span style=color:#ff79c6>uses</span>: peaceiris/actions-gh-pages@v2.5.0
+      <span style=color:#ff79c6>env</span>:
+        <span style=color:#ff79c6>ACTIONS_DEPLOY_KEY</span>: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        <span style=color:#ff79c6>PUBLISH_BRANCH</span>: master
+        <span style=color:#ff79c6>PUBLISH_DIR</span>: ./public
 </code></pre></td></tr></table></div></div><p>Hope submodule soon will be supported soon in the new version!</p></div></div><div class=footer2><hr id=hr-footer align=left><div class=social-media-banner><a href=https://github.com/KevCaz><i class="fab fab fa-github-square"></i></a><a href=https://stackoverflow.com/users/8038778><i class="fab fa-stack-overflow"></i></a><a href=https://twitter.com/KCazelles><i class="fab fa-twitter-square"></i></a><a href=http://orcid.org/0000-0001-6619-9874><i class="ai ai-orcid-square"></i></a><a href="https://scholar.google.ca/citations?user=xzvcu7cAAAAJ%26hl"><i class="ai ai-google-scholar-square"></i></a><a href=https://www.researchgate.net/profile/Kevin_Cazelles><i class="ai ai-researchgate-square"></i></a><a href=https://kevcaz.github.io/index.xml><i class="fas fa-rss-square"></i></a></div><div class=footer-custom>Website built with <a href=https://gohugo.io/>Hugo</a>.<br><i class="fas fa-code"></i>available on <a href=https://github.com/KevCaz/KevCaz.github.io><i class="fab fa-github"></i></a>.<br>Content under <a href=https://creativecommons.org/publicdomain/zero/1.0><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-zero"></i></a>unless otherwise specified.</div></div></div><div class=ctn-sidebar-secondary><div class=ctt-sidebar-secondary><h1><a href=#><i class="far fas fa-chevron-up"></i></a></h1><script src=../../../js/sidebar-secondary.js></script><h1><a onclick=scrollToBottom()><i class="far fas fa-chevron-down"></i></a></h1></div></div></div><script src=../../../js/sidebar-primary-dropdown.js></script><script>scrollingElement=(document.scrollingElement||document.body)
 function scrollToBottom(){scrollingElement.scrollTop=scrollingElement.scrollHeight;}</script></body></html>
