@@ -51,19 +51,19 @@ R<span style=color:#ff79c6>&gt;</span> <span style=color:#50fa7b>use_ghactions</
       - <span style=color:#ff79c6>name</span>: Checkout Repository
         <span style=color:#ff79c6>uses</span>: actions/checkout@master
       - <span style=color:#ff79c6>name</span>: Install Dependencies
-        <span style=color:#ff79c6>run</span>: <span style=color:#f1fa8c>|-
+        <span style=color:#ff79c6>run</span>: |-<span style=color:#f1fa8c>
 </span><span style=color:#f1fa8c>          Rscript -e &#34;install.packages(c(&#39;remotes&#39;, &#39;bookdown&#39;), repos = &#39;https://muug.ca/mirror/cran/&#39;)&#34;
-</span><span style=color:#f1fa8c>          Rscript -e &#34;remotes::install_deps(dependencies = TRUE, repos = &#39;https://muug.ca/mirror/cran/&#39;)&#34;
-</span><span style=color:#f1fa8c>      - name: Build GitBook
-</span><span style=color:#f1fa8c>        run: |-
-</span><span style=color:#f1fa8c>          Rscript -e &#34;bookdown::render_book(&#39;index.Rmd&#39;, &#39;bookdown::gitbook&#39;)&#34;
-</span><span style=color:#f1fa8c>      - name: Deploy GitBook to GitHub Pages
-</span><span style=color:#f1fa8c>        uses: peaceiris/actions-gh-pages@v2.5.0
-</span><span style=color:#f1fa8c>        env:
-</span><span style=color:#f1fa8c>          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-</span><span style=color:#f1fa8c>          PUBLISH_BRANCH: gh-pages
-</span><span style=color:#f1fa8c>          PUBLISH_DIR: ./_book
-</span></code></pre></td></tr></table></div></div><p>which worked well:</p><p><img src=ghactions00.png alt></p><p>After ~3min, the job was completed and the website deployed 🎉.</p><p><img src=ghactions01.png alt></p><p>Something that is worth noticing is that it is designed to work with <a href=https://www.docker.com/>Docker</a> which makes GitHub Actions quite powerful because setting up an environment becomes <em>almost</em> trivial! In my case, I basically needed Linux + R + publishing stuff, and this only required the following two lines (thanks to the great work of the <a href=https://www.rocker-project.org/>Rocker</a> team 👏):</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style=color:#f1fa8c>          Rscript -e &#34;remotes::install_deps(dependencies = TRUE, repos = &#39;https://muug.ca/mirror/cran/&#39;)&#34;</span>          
+      - <span style=color:#ff79c6>name</span>: Build GitBook
+        <span style=color:#ff79c6>run</span>: |-<span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>          </span>          Rscript -e &#34;bookdown::render_book(&#39;index.Rmd&#39;, &#39;bookdown::gitbook&#39;)&#34;
+      - <span style=color:#ff79c6>name</span>: Deploy GitBook to GitHub Pages
+        <span style=color:#ff79c6>uses</span>: peaceiris/actions-gh-pages@v2.5.0
+        <span style=color:#ff79c6>env</span>:
+          <span style=color:#ff79c6>ACTIONS_DEPLOY_KEY</span>: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          <span style=color:#ff79c6>PUBLISH_BRANCH</span>: gh-pages
+          <span style=color:#ff79c6>PUBLISH_DIR</span>: ./_book
+</code></pre></td></tr></table></div></div><p>which worked well:</p><p><img src=ghactions00.png alt></p><p>After ~3min, the job was completed and the website deployed 🎉.</p><p><img src=ghactions01.png alt></p><p>Something that is worth noticing is that it is designed to work with <a href=https://www.docker.com/>Docker</a> which makes GitHub Actions quite powerful because setting up an environment becomes <em>almost</em> trivial! In my case, I basically needed Linux + R + publishing stuff, and this only required the following two lines (thanks to the great work of the <a href=https://www.rocker-project.org/>Rocker</a> team 👏):</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>runs-on</span>: ubuntu-18.04
 <span style=color:#ff79c6>container</span>: rocker/verse:latest
